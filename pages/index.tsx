@@ -9,7 +9,9 @@ import Header from "../components/Header";
 import Modal from "../components/Modal";
 import cloudinary from "../utils/cloudinary";
 import getBase64ImageUrl from "../utils/generateBlurPlaceholder";
+import getOrderIdFromPublicId from "../utils/getOrderIdFromPublicId";
 import { meta } from "../utils/meta";
+import sortImagesById from "../utils/sortImagesbyId";
 import type { ImageProps } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 
@@ -87,30 +89,23 @@ export default Home;
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
     .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
-    .sort_by("public_id", "desc")
     .max_results(400)
     .execute();
 
-  let reducedResults: ImageProps[] = results.resources
-    .map((result) => ({
-      id: Number(result.public_id.split("/")[2].replace("_2", "")),
-      height: result.height,
-      width: result.width,
-      public_id: result.public_id,
-      format: result.format,
-    }))
-    .sort((a, b) => {
-      return a.id > b.id ? 1 : -1;
-    });
+  const reducedPromises: Promise<ImageProps>[] = results.resources.map(
+    async (image: ImageProps) => ({
+      id: getOrderIdFromPublicId(image.public_id),
+      blurDataUrl: await getBase64ImageUrl(image),
+      height: image.height,
+      width: image.width,
+      public_id: image.public_id,
+      format: image.format,
+    })
+  );
 
-  const blurImagePromises = results.resources.map((image: ImageProps) => {
-    return getBase64ImageUrl(image);
-  });
-  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
-
-  for (let i = 0; i < reducedResults.length; i++) {
-    reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i];
-  }
+  const reducedResults = (await Promise.all(reducedPromises)).sort(
+    sortImagesById
+  );
 
   return {
     props: {
