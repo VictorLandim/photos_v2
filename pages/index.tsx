@@ -52,9 +52,11 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
                 const lightboxSrc = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_${lightboxWidth}/${public_id}.${format}`;
 
                 return (
-                  <div className="after:content group relative flex w-full cursor-pointer items-center after:pointer-events-none after:absolute after:inset-0 after:rounded-sm after:shadow-highlight">
+                  <div
+                    key={public_id}
+                    className="after:content group relative flex w-full cursor-pointer items-center after:pointer-events-none after:absolute after:inset-0 after:rounded-sm after:shadow-highlight"
+                  >
                     <Item
-                      key={public_id}
                       original={lightboxSrc}
                       thumbnail={thumbnailSrc}
                       width={lightboxWidth}
