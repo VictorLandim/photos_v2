@@ -1,5 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import { meta } from "../utils/meta";
+import meta from "../utils/meta";
 
 class MyDocument extends Document {
   render() {

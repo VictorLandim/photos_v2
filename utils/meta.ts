@@ -3,4 +3,4 @@ const meta = {
   description: "collection of my favorite pictures",
 };
 
-export { meta };
+export default meta;
