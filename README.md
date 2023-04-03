@@ -5,6 +5,7 @@ Used this as a base: [Building a fast, animated image gallery with Next.js](http
 ## References
 
 - Cloudinary API: https://cloudinary.com/documentation/transformation_reference
+- Icons from https://heroicons.com/
 
 ## TODO:
 
