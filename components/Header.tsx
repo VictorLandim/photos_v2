@@ -11,7 +11,9 @@ const listItems = [
 
 const Header = () => (
   <header className="flex items-center justify-between border-b-2 border-white/10 px-6 py-4 text-white/80">
-    <div className="text-left font-bold">victor.photos</div>
+    <div className="text-left font-bold">
+      <Link href="/">∇ictor.photos</Link>
+    </div>
     <ul className="flex">
       {listItems.map((item) => (
         <li className="flex cursor-pointer flex-col items-center hover:underline">
