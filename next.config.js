@@ -1,6 +1,8 @@
 module.exports = {
   images: {
-    formats: ['image/avif', 'image/webp'],
-    domains: ['res.cloudinary.com'],
+    formats: ["image/avif", "image/webp"],
+    domains: ["res.cloudinary.com"],
+    loader: "custom",
+    loaderFile: "./utils/cloudinaryLoader.js",
   },
-}
+};
