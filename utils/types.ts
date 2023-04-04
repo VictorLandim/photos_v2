@@ -14,3 +14,7 @@ export type GalleryImageProps = {
   height: number;
   src: string;
 };
+
+export type PageProps = {
+  images: GalleryImageProps[];
+};

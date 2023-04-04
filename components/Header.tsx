@@ -3,9 +3,9 @@ import Folder from "./icons/Folder";
 
 const listItems = [
   {
-    href: "/chapters",
+    href: "/albums",
     icon: <Folder />,
-    text: "chapters",
+    text: "albums",
   },
 ];
 
