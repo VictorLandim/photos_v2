@@ -10,13 +10,11 @@ const renderPhoto = (renderPhotoProps: RenderPhotoProps<GalleryImageProps>) => {
     photo: { id, blurDataUrl, width, height },
   } = renderPhotoProps;
 
-  const MAX_WIDTH = 1200;
-  const MAX_HEIGHT = 1000;
-
+  const MAX_SIDE = 1600;
   const ASPECT_RATIO = width / height;
 
   const lightboxWidth = Math.round(
-    width > height ? MAX_WIDTH : MAX_HEIGHT * ASPECT_RATIO
+    width > height ? MAX_SIDE : MAX_SIDE * ASPECT_RATIO
   );
   const lightboxHeight = Math.round(lightboxWidth / ASPECT_RATIO);
 
