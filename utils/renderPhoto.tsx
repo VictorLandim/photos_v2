@@ -10,40 +10,24 @@ const renderPhoto = (renderPhotoProps: RenderPhotoProps<GalleryImageProps>) => {
     photo: { id, blurDataUrl, width, height },
   } = renderPhotoProps;
 
-  console.log({ className });
-
   const MAX_WIDTH = 1200;
-  const MAX_HEIGHT = 800;
+  const MAX_HEIGHT = 1000;
 
   const ASPECT_RATIO = width / height;
 
-  const sliderWidth = width > height ? MAX_WIDTH : MAX_HEIGHT / ASPECT_RATIO;
-  const sliderHeight = width > height ? MAX_HEIGHT : MAX_WIDTH / ASPECT_RATIO;
+  const lightboxWidth = Math.round(
+    width > height ? MAX_WIDTH : MAX_HEIGHT * ASPECT_RATIO
+  );
+  const lightboxHeight = Math.round(lightboxWidth / ASPECT_RATIO);
+
+  const sliderSrc = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_${lightboxWidth}/${src}`;
 
   return (
     <Item
-      original={src}
-      thumbnail={src}
-      width={sliderWidth}
-      height={sliderHeight}
-      content={
-        <Image
-          sizes="30w"
-          priority
-          alt="victor.photos image"
-          style={{
-            transform: "translate3d(0, 0, 0)",
-            maxWidth: "100%",
-            maxHeight: "100%",
-          }}
-          placeholder="blur"
-          blurDataURL={blurDataUrl}
-          title={title}
-          src={src}
-          width={sliderWidth}
-          height={sliderHeight}
-        />
-      }
+      original={sliderSrc}
+      thumbnail={sliderSrc}
+      width={lightboxWidth}
+      height={lightboxHeight}
     >
       {({ ref, open }) => (
         <Image

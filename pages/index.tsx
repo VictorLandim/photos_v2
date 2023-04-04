@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useMemo } from "react";
 import { PhotoAlbum } from "react-photo-album";
-import { Gallery, Item } from "react-photoswipe-gallery";
+import { Gallery } from "react-photoswipe-gallery";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import cloudinary from "../utils/cloudinary";
