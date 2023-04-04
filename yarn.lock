@@ -2929,6 +2929,11 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-photo-album@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-photo-album/-/react-photo-album-2.0.3.tgz#fd1a9bbb57d75c29c5b47ddf9e28f050132bd55d"
+  integrity sha512-LI3Ttg6BF/MtMVeaSAGaSxFJ6ihN+vxPHF1yb8Y/5y785Fpz1akzsG5Ti9/r9oYnL5XRNOuWC/OKGMZzLociGg==
+
 react-photoswipe-gallery@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/react-photoswipe-gallery/-/react-photoswipe-gallery-2.2.6.tgz#40ba7bdf9a8e88f7ecc0f1e9198b477ee8594a79"
