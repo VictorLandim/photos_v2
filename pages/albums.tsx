@@ -29,7 +29,7 @@ const Albums: NextPage = (props: AlbumsPageProps) => {
             <li className="mb-4">
               <Link
                 href={`/${album}`}
-                className="flex items-center gap-2 text-xs text-white/60 hover:underline"
+                className="inline-flex items-center gap-2 text-xs text-white/60 hover:underline"
               >
                 <Film />
                 {album}

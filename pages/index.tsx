@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import AlbumHeading from "../components/AlbumHeading";
 import Gallery from "../components/Gallery";
-import Film from "../components/icons/Film";
 import Layout from "../components/Layout";
 import cloudinary from "../utils/cloudinary";
 import getCloudinaryImages from "../utils/getCloudinaryImages";
@@ -25,12 +25,7 @@ const HomePage: NextPage = (props: HomePageProps) => {
         /> */}
       </Head>
       <Layout>
-        {latestAlbum && (
-          <p className="mb-4 flex items-center gap-2 text-xs text-white/60">
-            <Film />
-            Latest album: {latestAlbum}
-          </p>
-        )}
+        {latestAlbum && <AlbumHeading heading={`Latest: ${latestAlbum}`} />}
         <Gallery photos={images} />
       </Layout>
     </>
