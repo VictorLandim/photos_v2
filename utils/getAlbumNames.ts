@@ -1,15 +1,20 @@
 import cloudinary from "./cloudinary";
 
+let cachedAlbumNames: string[];
+
 const getAlbumNames = async () => {
-  const foldersResult = await cloudinary.v2.api.sub_folders(
-    process.env.CLOUDINARY_FOLDER
-  );
+  if (!cachedAlbumNames) {
+    const foldersResult = await cloudinary.v2.api.sub_folders(
+      process.env.CLOUDINARY_FOLDER
+    );
 
-  const albumNames = (foldersResult?.folders ?? [])?.map(
-    (folder) => folder?.name
-  );
+    const albumNames = (foldersResult?.folders ?? [])?.map(
+      (folder) => folder?.name
+    );
+    cachedAlbumNames = albumNames;
+  }
 
-  return albumNames;
+  return cachedAlbumNames;
 };
 
 export default getAlbumNames;
