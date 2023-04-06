@@ -1,5 +1,5 @@
 import { useMobileLayout } from "../contexts/MobileLayoutContext";
-import Film from "./icons/Film";
+import AlbumTitle from "./AlbumTitle";
 import RectangleGroup from "./icons/RectangleGroup";
 import RectangleStack from "./icons/RectangleStack";
 
@@ -20,11 +20,8 @@ const AlbumHeading = ({ heading }: AlbumHeadingProps) => {
     mobileLayout === "single" ? <RectangleGroup /> : <RectangleStack />;
 
   return (
-    <div className="mb-4 flex justify-between text-[0.6rem] text-white/60 sm:text-xs">
-      <div className="flex items-center gap-2">
-        <Film />
-        {heading}
-      </div>
+    <div className="mb-4 flex justify-between text-white/60">
+      <AlbumTitle name={heading} isFilm />
       <button className="px-1 sm:hidden" onClick={onClick}>
         {icon}
       </button>

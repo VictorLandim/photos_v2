@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import Film from "../components/icons/Film";
+import AlbumTitle from "../components/AlbumTitle";
 import Layout from "../components/Layout";
 import getAlbumNames from "../utils/getAlbumNames";
 import meta from "../utils/meta";
@@ -27,12 +27,8 @@ const Albums: NextPage = (props: AlbumsPageProps) => {
         <ul>
           {albums.map((album) => (
             <li className="mb-4">
-              <Link
-                href={`/${album}`}
-                className="inline-flex items-center gap-2 text-xs text-white/60 hover:underline"
-              >
-                <Film />
-                {album}
+              <Link href={`/${album}`}>
+                <AlbumTitle name={album} isFilm />
               </Link>
             </li>
           ))}

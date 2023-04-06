@@ -5,6 +5,7 @@ import Header from "./Header";
 type LayoutProps = {
   children: ReactNode;
 };
+
 const Layout = ({ children }: LayoutProps) => (
   <div className="flex min-h-screen flex-col bg-gradient-to-b from-black to-black/95">
     <Header />
