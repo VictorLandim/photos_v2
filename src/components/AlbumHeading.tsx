@@ -1,3 +1,4 @@
+'use client';
 import { useMobileLayout } from "../contexts/MobileLayoutContext";
 import AlbumTitle from "./AlbumTitle";
 import RectangleGroup from "./icons/RectangleGroup";

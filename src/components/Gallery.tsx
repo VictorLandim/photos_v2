@@ -1,3 +1,4 @@
+"use client";
 import { PhotoAlbum } from "react-photo-album";
 import { Gallery as PhotoswipeGallery } from "react-photoswipe-gallery";
 import { useMobileLayout } from "../contexts/MobileLayoutContext";
