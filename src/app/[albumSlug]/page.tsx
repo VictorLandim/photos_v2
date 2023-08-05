@@ -7,8 +7,7 @@ import getCloudinaryImages from "@/utils/getCloudinaryImages";
 import { getImageUrl } from "@/utils/getImageUrl";
 import imagesToGalleryImages from "@/utils/imagesToGalleryImages";
 import meta from "@/utils/meta";
-import { Metadata } from "next";
-import { ResolvingMetadata } from "next/dist/lib/metadata/types/metadata-interface";
+import { Metadata, ResolvingMetadata } from "next";
 
 type PageProps = {
   params: {
