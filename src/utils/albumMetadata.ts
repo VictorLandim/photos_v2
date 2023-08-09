@@ -69,8 +69,32 @@ const albumMetadata: AlbumMetadataItem[] = [
     `,
     featuredIndex: 6,
   },
+  {
+    name: "nea-kameni",
+    altName: "Nea Kameni",
+    month: "06",
+    year: "2023",
+    isFilm: false,
+    description: `
+      Fuji XE2 - Velvia.
+      Nea Kameni Volcano, Santorini - Greece.
+    `,
+    featuredIndex: 5,
+  },
+  {
+    name: "ancient-thera",
+    altName: "Ancient Thera",
+    month: "06",
+    year: "2023",
+    isFilm: false,
+    description: `
+      Fuji XE2 - Velvia.
+      Ancient Thera Hike, Santorini - Greece.
+    `,
+    featuredIndex: 2,
+  },
 ];
 
 export default albumMetadata;
 
-export const FEATURED_ALBUM = "patagonia";
+export const FEATURED_ALBUM = "nea-kameni";
