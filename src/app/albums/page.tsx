@@ -29,8 +29,8 @@ const Albums = async () => {
               const src = `victorphotos/${albumSlug}/${album.featuredImagePath}`;
               return (
                 <Link href={`/${albumSlug}`} className="w-full">
-                  <div className="rounded-sm border border-gray-500 transition-all hover:scale-[1.01]">
-                    <div className="relative h-48 w-full overflow-hidden rounded-t-sm border-b border-b-gray-500">
+                  <div className="rounded-sm border border-white/10 transition-all hover:scale-[1.01]">
+                    <div className="relative h-48 w-full overflow-hidden rounded-t-sm border-b border-b-white/10">
                       <Image
                         alt={name}
                         className="h-full w-full rounded-t-sm object-cover"
