@@ -5,7 +5,7 @@ export type AlbumMetadataItem = {
   year: string;
   isFilm: boolean;
   description: string;
-  featuredIndex: number;
+  featuredImagePath: string;
 };
 
 const albumMetadata: AlbumMetadataItem[] = [
@@ -19,7 +19,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji Superia X-Tra 400.
       Florianópolis - Brazil during New Years.
     `,
-    featuredIndex: 31,
+    featuredImagePath: "34.jpg",
   },
   {
     name: "santa-marta",
@@ -31,7 +31,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji Superia X-Tra 400.
       Santa Marta - Colombia.
     `,
-    featuredIndex: 0,
+    featuredImagePath: "1.jpg",
   },
   {
     name: "buenos-aires",
@@ -43,7 +43,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fujifilm X-E2.
       Buenos Aires - Argentina.
     `,
-    featuredIndex: 52,
+    featuredImagePath: "52.jpg",
   },
   {
     name: "patagonia",
@@ -55,7 +55,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Kodak Vision 250D, Kodak Portra 400.
       El Calafate, El Chaltén - Argentina.
     `,
-    featuredIndex: 13,
+    featuredImagePath: "13.jpg",
   },
   {
     name: "mendoza-maragogi-chapada",
@@ -67,7 +67,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Kodak Vision 250D, Kodak Portra 400.
       Mendoza - Argentina, Maragogi, Alto Paraíso - Brazil.
     `,
-    featuredIndex: 6,
+    featuredImagePath: "6.jpg",
   },
   {
     name: "nea-kameni",
@@ -79,7 +79,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji XE2 - Velvia.
       Nea Kameni Volcano, Santorini - Greece.
     `,
-    featuredIndex: 5,
+    featuredImagePath: "5.jpg",
   },
   {
     name: "ancient-thera",
@@ -91,10 +91,24 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji XE2 - Velvia.
       Ancient Thera Hike, Santorini - Greece.
     `,
-    featuredIndex: 2,
+    featuredImagePath: "2.jpg",
+  },
+  {
+    name: "barcelona",
+    altName: "Barcelona",
+    month: "08",
+    year: "2023",
+    isFilm: false,
+    description: `
+      Ricoh GR IIIx
+      Barcelona - Spain.
+    `,
+    featuredImagePath: "8.jpg",
   },
 ];
 
 export default albumMetadata;
+
+export const albumNames = albumMetadata.map((album) => album.name);
 
 export const FEATURED_ALBUM = "nea-kameni";
