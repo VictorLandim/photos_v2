@@ -44,18 +44,13 @@ export async function generateMetadata(
   _props: Props,
   parent?: ResolvingMetadata
 ): Promise<Metadata> {
-  // fetch data
-  const props = await getProps();
-
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
 
   const metadata = albumMetadata.find((album) => album.name === FEATURED_ALBUM);
 
-  const featuredImageIndex = metadata?.featuredIndex ?? 0;
-  const featuredImage = props.images[featuredImageIndex];
   const imageWidth = 500;
-  const imageUrl = getImageUrl(featuredImage.src, imageWidth);
+  const imageUrl = getImageUrl(metadata.featuredImagePath, imageWidth);
 
   return {
     ...meta,

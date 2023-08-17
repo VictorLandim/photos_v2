@@ -53,10 +53,8 @@ export async function generateMetadata(
     (album) => album.name === params.albumSlug
   );
 
-  const featuredImageIndex = metadata?.featuredIndex ?? 0;
-  const featuredImage = props.images[featuredImageIndex];
   const imageWidth = 500;
-  const imageUrl = getImageUrl(featuredImage.src, imageWidth);
+  const imageUrl = getImageUrl(metadata?.featuredImagePath, imageWidth);
 
   const description = metadata?.description ?? "";
 
