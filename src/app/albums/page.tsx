@@ -121,7 +121,7 @@ export async function generateMetadata(
   const metadata = albumMetadata.find((album) => album.name === FEATURED_ALBUM);
 
   const imageWidth = 500;
-  const path = `${FEATURED_ALBUM}/${metadata.featuredImagePath}`;
+  const path = `victorphotos/${FEATURED_ALBUM}/${metadata.featuredImagePath}`;
   const imageUrl = getImageUrl(path, imageWidth);
 
   return {
