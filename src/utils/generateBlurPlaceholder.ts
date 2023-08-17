@@ -1,11 +1,11 @@
 import imagemin from "imagemin";
 import type { ImageProps } from "./types";
 
-const cache = new Map<ImageProps, string>();
+type Image = Pick<ImageProps, "public_id" | "format">;
 
-export default async function getBase64ImageUrl(
-  image: ImageProps
-): Promise<string> {
+const cache = new Map<Image, string>();
+
+export default async function getBase64ImageUrl(image: Image): Promise<string> {
   let url = cache.get(image);
   if (url) return url;
 
@@ -17,5 +17,6 @@ export default async function getBase64ImageUrl(
 
   url = `data:image/jpeg;base64,${Buffer.from(minified).toString("base64")}`;
   cache.set(image, url);
+
   return url;
 }

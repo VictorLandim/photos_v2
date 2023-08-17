@@ -6,7 +6,7 @@ type AlbumTitleProps = {
   isFilm?: boolean;
 };
 const AlbumTitle = ({ name, isFilm }: AlbumTitleProps) => (
-  <p className="inline-flex items-center gap-2 text-xs text-white/60 hover:underline">
+  <p className="inline-flex items-center gap-2 text-xs text-white/60">
     {isFilm ? <Film /> : <Camera />}
     {name}
   </p>
