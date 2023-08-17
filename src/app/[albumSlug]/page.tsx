@@ -54,7 +54,8 @@ export async function generateMetadata(
   );
 
   const imageWidth = 500;
-  const imageUrl = getImageUrl(metadata?.featuredImagePath, imageWidth);
+  const path = `${params.albumSlug}/${metadata.featuredImagePath}`;
+  const imageUrl = getImageUrl(path, imageWidth);
 
   const description = metadata?.description ?? "";
 
