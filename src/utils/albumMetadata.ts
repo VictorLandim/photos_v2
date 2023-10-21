@@ -105,6 +105,18 @@ const albumMetadata: AlbumMetadataItem[] = [
     `,
     featuredImagePath: "8.jpg",
   },
+  {
+    name: "london",
+    altName: "London",
+    month: "10",
+    year: "2023",
+    isFilm: false,
+    description: `
+      Ricoh GR IIIx
+      London - England.
+    `,
+    featuredImagePath: "20.jpg",
+  },
 ];
 
 export default albumMetadata;
