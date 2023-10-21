@@ -11,7 +11,7 @@ const renderPhoto = (renderPhotoProps: RenderPhotoProps<GalleryImageProps>) => {
     photo: { id, blurDataUrl, width, height },
   } = renderPhotoProps;
 
-  const MAX_SIDE = 1600;
+  const MAX_SIDE = 2000;
   const ASPECT_RATIO = width / height;
 
   const lightboxWidth = Math.round(
