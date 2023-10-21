@@ -115,7 +115,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Ricoh GR IIIx
       London - England.
     `,
-    featuredImagePath: "20.jpg",
+    featuredImagePath: "18.jpg",
   },
 ];
 
@@ -123,4 +123,4 @@ export default albumMetadata;
 
 export const albumNames = albumMetadata.map((album) => album.name);
 
-export const FEATURED_ALBUM = "nea-kameni";
+export const FEATURED_ALBUM = "london";
