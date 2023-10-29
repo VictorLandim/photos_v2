@@ -16,8 +16,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: true,
     description: `
+      Florianópolis - Brazil during New Years
       Fuji Superia X-Tra 400.
-      Florianópolis - Brazil during New Years.
     `,
     featuredImagePath: "34.jpg",
   },
@@ -28,8 +28,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: true,
     description: `
+      Santa Marta - Colombia
       Fuji Superia X-Tra 400.
-      Santa Marta - Colombia.
     `,
     featuredImagePath: "1.jpg",
   },
@@ -40,8 +40,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2022",
     isFilm: false,
     description: `
+      Buenos Aires - Argentina
       Fujifilm X-E2.
-      Buenos Aires - Argentina.
     `,
     featuredImagePath: "52.jpg",
   },
@@ -52,8 +52,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: true,
     description: `
+      El Calafate, El Chaltén - Argentina
       Kodak Vision 250D, Kodak Portra 400.
-      El Calafate, El Chaltén - Argentina.
     `,
     featuredImagePath: "13.jpg",
   },
@@ -64,8 +64,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: true,
     description: `
+      Mendoza - Argentina, Maragogi, Alto Paraíso - Brazil
       Kodak Vision 250D, Kodak Portra 400.
-      Mendoza - Argentina, Maragogi, Alto Paraíso - Brazil.
     `,
     featuredImagePath: "6.jpg",
   },
@@ -76,8 +76,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: false,
     description: `
+      Nea Kameni Volcano, Santorini - Greece
       Fuji XE2 - Velvia.
-      Nea Kameni Volcano, Santorini - Greece.
     `,
     featuredImagePath: "5.jpg",
   },
@@ -88,8 +88,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: false,
     description: `
+      Ancient Thera, Santorini - Greece
       Fuji XE2 - Velvia.
-      Ancient Thera Hike, Santorini - Greece.
     `,
     featuredImagePath: "2.jpg",
   },
@@ -100,8 +100,8 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: false,
     description: `
-      Ricoh GR IIIx
-      Barcelona - Spain.
+      Barcelona - Spain
+      Ricoh GR IIIx.
     `,
     featuredImagePath: "8.jpg",
   },
@@ -112,10 +112,22 @@ const albumMetadata: AlbumMetadataItem[] = [
     year: "2023",
     isFilm: false,
     description: `
-      Ricoh GR IIIx
-      London - England.
+      London - England
+      Ricoh GR IIIx.
     `,
     featuredImagePath: "18.jpg",
+  },
+  {
+    name: "suceava",
+    altName: "Suceava",
+    month: "08",
+    year: "2023",
+    isFilm: false,
+    description: `
+      Suceava - Romania
+      Ricoh GR IIIx.
+    `,
+    featuredImagePath: "8.JPG",
   },
 ];
 
