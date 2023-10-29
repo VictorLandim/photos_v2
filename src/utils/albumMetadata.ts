@@ -129,6 +129,18 @@ const albumMetadata: AlbumMetadataItem[] = [
     `,
     featuredImagePath: "8.JPG",
   },
+  {
+    name: "fungi",
+    altName: "Fungi",
+    month: "07",
+    year: "2023",
+    isFilm: false,
+    description: `
+      Mushrooms found in Romania
+      Ricoh GR IIIx.
+    `,
+    featuredImagePath: "R0001103.JPG",
+  },
 ];
 
 export default albumMetadata;
