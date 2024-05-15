@@ -41,10 +41,10 @@ const Hero = () => (
           <div className="flex items-end">
             <div className="flex items-center gap-2">
               <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
-                Victor Lan •
+                Victor Lan
               </h5>
-              <pre className="text-base font-bold text-gray-800 lg:text-2xl dark:text-gray-400">
-                @victor
+              <pre className="hidden text-base font-bold text-gray-800 lg:block lg:text-2xl dark:text-gray-400">
+                • @victor
               </pre>
             </div>
           </div>
@@ -72,7 +72,7 @@ const Hero = () => (
           </div>
         </div>
       </div>
-      <div className="flex gap-3 lg:gap-4">
+      <div className="mt-8 flex gap-3 self-start lg:mt-14 lg:gap-4">
         {[GlobeAmericasIcon, ShareIcon].map((Icon) => (
           <button className="inline-flex size-8 appearance-none items-center justify-center rounded-full border border-gray-300 bg-slate-100 text-gray-800 transition-all hover:bg-gray-100 lg:size-12 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800">
             <Icon className="size-4 lg:size-5" />
