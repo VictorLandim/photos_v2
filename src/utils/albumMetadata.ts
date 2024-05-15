@@ -11,8 +11,8 @@ export type AlbumMetadataItem = {
 const albumMetadata: AlbumMetadataItem[] = [
   {
     name: "floripa",
-    altName: "Floripa",
-    month: "01",
+    altName: "🇧🇷 Floripa",
+    month: "January",
     year: "2023",
     isFilm: true,
     description: `
@@ -23,8 +23,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "santa-marta",
-    altName: "Santa Marta",
-    month: "03",
+    altName: "🇨🇴 Santa Marta",
+    month: "March",
     year: "2023",
     isFilm: true,
     description: `
@@ -35,8 +35,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "buenos-aires",
-    altName: "Buenos Aires 2022",
-    month: "08",
+    altName: "🇦🇷 Buenos Aires",
+    month: "August",
     year: "2022",
     isFilm: false,
     description: `
@@ -47,8 +47,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "patagonia",
-    altName: "Patagonia (film)",
-    month: "04",
+    altName: "🇦🇷 Patagonia (film)",
+    month: "April",
     year: "2023",
     isFilm: true,
     description: `
@@ -59,8 +59,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "mendoza-maragogi-chapada",
-    altName: "Mendoza/Maragogi/Chapada",
-    month: "04",
+    altName: "🇦🇷 Mendoza/Maragogi/Chapada",
+    month: "April",
     year: "2023",
     isFilm: true,
     description: `
@@ -71,8 +71,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "nea-kameni",
-    altName: "Nea Kameni",
-    month: "06",
+    altName: "🇬🇷 Nea Kameni",
+    month: "June",
     year: "2023",
     isFilm: false,
     description: `
@@ -83,8 +83,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "ancient-thera",
-    altName: "Ancient Thera",
-    month: "06",
+    altName: "🇬🇷 Ancient Thera",
+    month: "June",
     year: "2023",
     isFilm: false,
     description: `
@@ -95,8 +95,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "barcelona",
-    altName: "Barcelona",
-    month: "08",
+    altName: "🇪🇸 Barcelona",
+    month: "August",
     year: "2023",
     isFilm: false,
     description: `
@@ -107,8 +107,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "london",
-    altName: "London",
-    month: "10",
+    altName: "🇬🇧 London",
+    month: "October",
     year: "2023",
     isFilm: false,
     description: `
@@ -119,8 +119,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "suceava",
-    altName: "Suceava",
-    month: "08",
+    altName: "🇷🇴 Suceava",
+    month: "October",
     year: "2023",
     isFilm: false,
     description: `
@@ -131,8 +131,8 @@ const albumMetadata: AlbumMetadataItem[] = [
   },
   {
     name: "fungi",
-    altName: "Fungi",
-    month: "07",
+    altName: "🍄 Fungi",
+    month: "July",
     year: "2023",
     isFilm: false,
     description: `

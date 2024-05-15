@@ -1,11 +1,15 @@
-import { ReactNode } from "react";
+import { cn } from "@/utils/cn";
+import { ComponentProps } from "react";
 
-type LayoutProps = {
-  children: ReactNode;
-};
-
-export const Container = ({ children }: LayoutProps) => (
-  <main className="ui-sm:p-6 ui-mx-auto ui-flex ui-w-full ui-max-w-[1400px] ui-flex-1 ui-justify-between ui-p-[12px]">
+export const Container = ({
+  className,
+  children,
+  ...props
+}: ComponentProps<"div">) => (
+  <div
+    className={cn("mx-auto w-full max-w-7xl px-4 lg:px-8", className)}
+    {...props}
+  >
     {children}
-  </main>
+  </div>
 );

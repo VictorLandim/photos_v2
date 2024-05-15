@@ -1,68 +1,88 @@
-import Link from "next/link";
-import AlbumTitle from "@/components/AlbumTitle";
-import getAlbumNames from "@/utils/getAlbumNames";
-import meta from "@/utils/meta";
+import { Container } from "@/components/Container";
 import albumMetadata, {
   AlbumMetadataItem,
   FEATURED_ALBUM,
 } from "@/utils/albumMetadata";
-import { Metadata, ResolvingMetadata } from "next";
-import { getImageUrl } from "@/utils/getImageUrl";
-import Image from "next/image";
 import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
+import getAlbumNames from "@/utils/getAlbumNames";
+import { getImageUrl } from "@/utils/getImageUrl";
+import meta from "@/utils/meta";
+import {
+  GlobeAmericasIcon,
+  MapPinIcon,
+  ShareIcon,
+} from "@heroicons/react/24/solid";
+import { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
+import heroImg from "../../../public/assets/balos2.webp";
+import sunnyshotWhite from "../../../public/sunnyshot_white.svg";
+import { Content } from "./content";
+
+const Hero = () => (
+  <div className="relative">
+    <div className="relative h-[160px] w-full overflow-hidden rounded-none lg:h-[330px]">
+      <Image
+        unoptimized
+        alt="hero image"
+        className="absolute inset-0 object-cover object-[center_65%]"
+        src={heroImg.src}
+        fill
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
+      <a
+        href="https://sunnyshot.com"
+        className="absolute inset-4 flex h-fit origin-top-left scale-75 items-center gap-2 text-lg font-bold text-white lg:scale-100"
+      >
+        <img alt="SunnyShot logo" src={sunnyshotWhite.src} className="size-6" />
+        <span>SunnyShot</span>
+      </a>
+    </div>
+    <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
+      <div className="flex gap-4 lg:gap-8">
+        <img
+          alt="avatar"
+          className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
+          src="https://avatars.githubusercontent.com/u/5438965?v=4"
+        />
+        <div className="mt-8 flex flex-col gap-1 lg:mt-14 lg:gap-2">
+          <div className="flex items-end">
+            <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
+              Victor Lan
+            </h5>
+            <p className="text-3xl font-bold text-gray-900 dark:text-gray-50"></p>
+          </div>
+          <p className="flex items-center gap-1 text-sm text-gray-400 lg:text-base">
+            <MapPinIcon className="size-4" />
+            Cluj-Napoca
+          </p>
+        </div>
+      </div>
+      <div className="flex gap-3 lg:gap-4">
+        {[GlobeAmericasIcon, ShareIcon].map((Icon) => (
+          <button className="inline-flex size-8 appearance-none items-center justify-center rounded-full border border-gray-300 bg-slate-100 text-gray-800 transition-all hover:bg-gray-100 lg:size-12 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800">
+            <Icon className="size-4 lg:size-5" />
+          </button>
+        ))}
+      </div>
+    </Container>
+  </div>
+);
 
 const Albums = async () => {
-  const { albumsByYearArray } = await getProps();
+  const { albumList } = await getProps();
 
   return (
-    <>
-      {albumsByYearArray.map(({ year, items }) => (
-        <ul key={year} className="mb-8 text-white">
-          <h2 className="mb-3 text-lg tracking-wider">{year}</h2>
-          <div className="grid grid-cols-1 justify-items-start gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {items.map((album) => {
-              const albumSlug = album.name;
-              const name = album.altName;
-              const isFilm = album.isFilm;
-              const imageBlurUrl = album.featuredImageBlurUrl;
-              const size = 200;
-              const src = `victorphotos/${albumSlug}/${album.featuredImagePath}`;
-              return (
-                <Link href={`/${albumSlug}`} className="w-full">
-                  <div className="rounded-sm border border-white/10 transition-all hover:scale-[1.01]">
-                    <div className="relative h-48 w-full overflow-hidden rounded-t-sm border-b border-b-white/10">
-                      <Image
-                        alt={name}
-                        className="h-full w-full rounded-t-sm object-cover"
-                        style={{ transform: "translate3d(0, 0, 0)" }}
-                        placeholder="blur"
-                        blurDataURL={imageBlurUrl}
-                        title={name}
-                        src={src}
-                        loading="eager"
-                        width={size}
-                        height={size}
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2 px-2 py-3">
-                      <AlbumTitle name={name} isFilm={isFilm} />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </ul>
-      ))}
-    </>
+    <div>
+      <Hero />
+      <Container className="my-8 lg:my-12">
+        <div className="h-[0.5px] bg-gray-300 dark:bg-neutral-700" />
+      </Container>
+      <Content albumList={albumList} />
+    </div>
   );
 };
 
 export default Albums;
-
-type Item = AlbumMetadataItem & {
-  featuredImageBlurUrl: string;
-};
 
 const getProps = async () => {
   const albumNames = await getAlbumNames();
@@ -83,31 +103,12 @@ const getProps = async () => {
     };
   });
 
-  const albumList = await Promise.all(albumPromiseList);
-
-  const albumsByYear: Record<string, Item[]> = albumList.reduce((acc, curr) => {
-    const key = curr.year;
-
-    acc[key] = acc[key] || [];
-
-    const albums = [...acc[key], curr].sort(
-      // newest first
-      (a, b) => Number(b.month) - Number(a.month)
-    );
-    acc[key] = albums;
-    return acc;
-  }, {});
-
-  const albumsByYearArray = Object.keys(albumsByYear)
-    .map((key) => ({
-      year: key,
-      items: albumsByYear[key],
-    }))
-    // newest first
-    .sort((a, b) => Number(b.year) - Number(a.year));
+  const albumList = (await Promise.all(albumPromiseList)).sort(
+    (a, b) => `${b.year}${b.month}` - `${a.year}${a.month}`
+  );
 
   return {
-    albumsByYearArray,
+    albumList,
   };
 };
 

@@ -1,8 +1,10 @@
 const Footer = () => (
-  <footer className="p-6 pt-3 text-center text-xs leading-4 text-white/80">
-    {`${new Date().getFullYear()} `}💻/📷 with ❤ by
+  <footer className="p-6 pt-3 text-center text-xs leading-4 text-gray-950 dark:text-white/80">
+    {`${new Date().getFullYear()} `} made with ❤ by
     <br />
-    ∇ictor Landim
+    <a href="https://sunnyshot.com" className="hover:underline">
+      SunnyShot
+    </a>
   </footer>
 );
 

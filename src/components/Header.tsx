@@ -11,7 +11,7 @@ const listItems = [
 
 const Header = () => (
   <header className="sticky top-0 z-10 flex h-[58px] w-full items-center justify-center border-b-2 border-white/10 bg-black text-white/80">
-    <div className="flex max-w-[1400px] flex-1 items-center justify-between px-4 sm:px-6">
+    <div className="flex max-w-7xl flex-1 items-center justify-between px-4 sm:px-6">
       <div className="pt-1 text-left font-bold">
         <Link href="/">∇ictor.photos</Link>
       </div>
