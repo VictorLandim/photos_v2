@@ -10,7 +10,7 @@ import imagesToGalleryImages from "@/utils/imagesToGalleryImages";
 import meta from "@/utils/meta";
 import {
   ArrowUpOnSquareIcon,
-  ChevronRightIcon,
+  RectangleStackIcon,
 } from "@heroicons/react/24/outline";
 import { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
@@ -49,33 +49,7 @@ const AlbumDetailPage = async (props: PageProps) => {
           <p className="text-lg text-gray-400">{meta.description}</p>
         </div>
 
-        <div className="mb-4 mt-12 flex items-end justify-between lg:mt-12">
-          <div className="flex items-center gap-2">
-            <img
-              alt="avatar"
-              className="size-10 rounded-full shadow-lg outline outline-2 outline-white lg:size-12 dark:outline-black"
-              src="https://avatars.githubusercontent.com/u/5438965?v=4"
-            />
-            <div className="flex flex-col dark:text-white">
-              <div className="text-base font-bold leading-none text-gray-800 lg:text-lg dark:text-gray-100">
-                Victor Lan
-              </div>
-              <Link
-                href="/"
-                className="text-sm font-medium text-gray-500 dark:text-gray-200"
-              >
-                @victor
-              </Link>
-            </div>
-          </div>
-          <Link
-            href="/"
-            className="flex items-center gap-1 text-base text-gray-500 hover:underline lg:text-lg dark:text-gray-300"
-          >
-            <span>See trips</span>
-            <ChevronRightIcon className="size-4" />
-          </Link>
-        </div>
+        <AlbumHeading />
       </header>
     );
   };

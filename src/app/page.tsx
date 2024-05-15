@@ -33,7 +33,7 @@ const Hero = () => (
     </div>
     <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
       <div className="relative flex gap-4 lg:gap-8">
-        <div className="relative">
+        <div className="relative shrink-0">
           <img
             alt="avatar"
             className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
