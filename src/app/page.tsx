@@ -1,5 +1,6 @@
 import { AlbumGrid } from "@/components/AlbumGrid";
 import { Container } from "@/components/Container";
+import { SunnyShotLink } from "@/components/SunnyShotLink";
 import albumMetadata, { FEATURED_ALBUM } from "@/utils/albumMetadata";
 import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import getAlbumNames from "@/utils/getAlbumNames";
@@ -13,7 +14,6 @@ import {
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import heroImg from "../../public/assets/balos2.webp";
-import sunnyshotWhite from "../../public/sunnyshot_white.svg";
 
 const Hero = () => (
   <div className="relative">
@@ -26,13 +26,9 @@ const Hero = () => (
         fill
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
-      <a
-        href="https://sunnyshot.com"
-        className="absolute inset-4 flex h-fit origin-top-left scale-75 items-center gap-2 text-lg font-bold text-white lg:scale-100"
-      >
-        <img alt="SunnyShot logo" src={sunnyshotWhite.src} className="size-6" />
-        <span>SunnyShot</span>
-      </a>
+      <div className="p-4">
+        <SunnyShotLink white />
+      </div>
     </div>
     <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
       <div className="flex gap-4 lg:gap-8">
@@ -43,9 +39,14 @@ const Hero = () => (
         />
         <div className="mt-8 flex flex-col gap-1 lg:mt-14 lg:gap-2">
           <div className="flex items-end">
-            <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
-              Victor Lan
-            </h5>
+            <div className="flex items-center gap-2">
+              <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
+                Victor Lan •
+              </h5>
+              <pre className="text-base font-bold text-gray-800 lg:text-2xl">
+                @victor
+              </pre>
+            </div>
             <p className="text-3xl font-bold text-gray-900 dark:text-gray-50"></p>
           </div>
           <p className="flex items-center gap-1 text-sm text-gray-500 lg:text-base dark:text-gray-400">
