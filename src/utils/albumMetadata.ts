@@ -164,8 +164,8 @@ const BUENOS_AIRES: AlbumMetadataItem = {
 };
 
 const albumMetadata: AlbumMetadataItem[] = [
-  FLORIPA,
   PATAGONIA,
+  FLORIPA,
   SUCEAVA,
   NEA_KAMENI,
   SANTA_MARTA,
