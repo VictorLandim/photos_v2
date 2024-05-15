@@ -43,11 +43,10 @@ const Hero = () => (
               <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
                 Victor Lan •
               </h5>
-              <pre className="text-base font-bold text-gray-800 lg:text-2xl">
+              <pre className="text-base font-bold text-gray-800 lg:text-2xl dark:text-gray-400">
                 @victor
               </pre>
             </div>
-            <p className="text-3xl font-bold text-gray-900 dark:text-gray-50"></p>
           </div>
           <p className="mt-1 flex items-center gap-1 text-sm text-gray-500 lg:text-base dark:text-gray-400">
             <MapPinIcon className="size-4" />
@@ -60,11 +59,11 @@ const Hero = () => (
               ["13k", "views"],
             ].map((item) => {
               return (
-                <div className="flex flex-col gap-1 text-center text-gray-900">
-                  <span className="text-base font-bold lg:text-lg">
+                <div className="flex flex-col gap-1 text-center">
+                  <span className="text-base font-medium text-gray-900 lg:text-lg dark:text-gray-50">
                     {item[0]}
                   </span>
-                  <span className="text-xs font-semibold uppercase text-gray-500 lg:text-sm">
+                  <span className="text-xs uppercase text-gray-500 lg:text-sm">
                     {item[1]}
                   </span>
                 </div>

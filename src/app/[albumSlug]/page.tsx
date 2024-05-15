@@ -37,7 +37,7 @@ const AlbumDetailPage = async (props: PageProps) => {
         <div className="mb-4 flex items-center justify-between px-2 py-2 lg:mb-8">
           <SunnyShotLink />
 
-          <button className="flex size-8 appearance-none items-center justify-center rounded-full border border-current bg-gray-50 text-gray-700 transition-all hover:bg-gray-200 lg:size-10 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+          <button className="flex size-8 appearance-none items-center justify-center rounded-full border border-current bg-gray-50 text-gray-700 transition-all hover:bg-gray-200 lg:size-10 dark:bg-neutral-900 dark:text-gray-100 dark:hover:bg-neutral-800">
             <ArrowUpOnSquareIcon className="size-5" />
           </button>
         </div>
@@ -50,19 +50,22 @@ const AlbumDetailPage = async (props: PageProps) => {
         </div>
 
         <div className="mb-4 mt-12 flex items-end justify-between lg:mt-12">
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <img
               alt="avatar"
               className="size-10 rounded-full shadow-lg outline outline-2 outline-white lg:size-12 dark:outline-black"
               src="https://avatars.githubusercontent.com/u/5438965?v=4"
             />
             <div className="flex flex-col dark:text-white">
-              <div className="text-base font-bold text-gray-800 lg:text-lg dark:text-gray-100">
+              <div className="text-base font-bold leading-none text-gray-800 lg:text-lg dark:text-gray-100">
                 Victor Lan
               </div>
-              <div className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+              <Link
+                href="/"
+                className="text-sm font-medium text-gray-500 dark:text-gray-200"
+              >
                 @victor
-              </div>
+              </Link>
             </div>
           </div>
           <Link
