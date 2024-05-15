@@ -43,10 +43,10 @@ const renderPhoto = ({ photo }, i) => {
           width={size}
           height={size}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20 to-[50%] transition-all duration-300 hover:opacity-90"></div>
-        <div className="text-whit absolute bottom-8 left-4 flex max-w-full flex-col lg:left-8">
-          <p className="text-sm">{date}</p>
-          <h4 className="max-w-full truncate text-4xl font-bold leading-tight">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20 to-[70%] transition-all duration-300 hover:opacity-90"></div>
+        <div className="absolute bottom-6 left-4 flex w-full max-w-full flex-col text-white lg:left-8">
+          <p className="text-base">{date}</p>
+          <h4 className="w-full max-w-[90%] truncate text-4xl font-bold leading-tight">
             {name}
           </h4>
         </div>
