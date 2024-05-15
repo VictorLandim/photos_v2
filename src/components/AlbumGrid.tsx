@@ -48,7 +48,7 @@ const renderPhoto = ({ photo }, i) => {
         </div>
         <div className="absolute bottom-6 left-4 flex w-full max-w-full flex-col text-white lg:left-8">
           <p className="text-base">{date}</p>
-          <h4 className="w-full max-w-[90%] truncate text-3xl font-bold leading-tight lg:text-4xl">
+          <h4 className="w-full max-w-[90%] truncate text-3xl font-bold !leading-tight lg:text-4xl">
             {name}
           </h4>
         </div>

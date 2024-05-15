@@ -25,7 +25,7 @@ const FLORIPA: AlbumMetadataItem = {
 
 const SANTA_MARTA: AlbumMetadataItem = {
   name: "santa-marta",
-  altName: "🇨🇴 Santa Marta",
+  altName: "💛 Love in Colombia",
   month: "March",
   year: "2023",
   isFilm: true,
@@ -39,7 +39,7 @@ const SANTA_MARTA: AlbumMetadataItem = {
 
 const PATAGONIA: AlbumMetadataItem = {
   name: "patagonia",
-  altName: "🇦🇷 Patagonia (film)",
+  altName: "🏔️ Patagonia adventure",
   month: "April",
   year: "2023",
   isFilm: true,
@@ -53,7 +53,7 @@ const PATAGONIA: AlbumMetadataItem = {
 
 const MENDOZA: AlbumMetadataItem = {
   name: "mendoza-maragogi-chapada",
-  altName: "🇦🇷 Mendoza/Maragogi/Chapada",
+  altName: "🍃 Spring sun",
   month: "April",
   year: "2023",
   isFilm: true,
@@ -67,7 +67,7 @@ const MENDOZA: AlbumMetadataItem = {
 
 const NEA_KAMENI: AlbumMetadataItem = {
   name: "nea-kameni",
-  altName: "🇬🇷 Nea Kameni",
+  altName: "🌋 Nea Kameni",
   month: "June",
   year: "2023",
   isFilm: false,
@@ -81,7 +81,7 @@ const NEA_KAMENI: AlbumMetadataItem = {
 
 const ANCIENT_THERA: AlbumMetadataItem = {
   name: "ancient-thera",
-  altName: "🇬🇷 Ancient Thera",
+  altName: "🏛️ Hike in Ancient Thera",
   month: "June",
   year: "2023",
   isFilm: false,
@@ -95,7 +95,7 @@ const ANCIENT_THERA: AlbumMetadataItem = {
 
 const BARCELONA: AlbumMetadataItem = {
   name: "barcelona",
-  altName: "🇪🇸 Barcelona",
+  altName: "🇪🇸 Barcelona summer",
   month: "August",
   year: "2023",
   isFilm: false,
@@ -109,7 +109,7 @@ const BARCELONA: AlbumMetadataItem = {
 
 const LONDON: AlbumMetadataItem = {
   name: "london",
-  altName: "🇬🇧 London",
+  altName: "🇬🇧 First time in London",
   month: "October",
   year: "2023",
   isFilm: false,
@@ -123,7 +123,7 @@ const LONDON: AlbumMetadataItem = {
 
 const SUCEAVA: AlbumMetadataItem = {
   name: "suceava",
-  altName: "🇷🇴 Suceava",
+  altName: "🇷🇴 Bukovina hike",
   month: "October",
   year: "2023",
   isFilm: false,
@@ -137,7 +137,7 @@ const SUCEAVA: AlbumMetadataItem = {
 
 const FUNGI: AlbumMetadataItem = {
   name: "fungi",
-  altName: "🍄 Fungi",
+  altName: "🍄 Cool mushrooms",
   month: "July",
   year: "2023",
   isFilm: false,
@@ -151,7 +151,7 @@ const FUNGI: AlbumMetadataItem = {
 
 const BUENOS_AIRES: AlbumMetadataItem = {
   name: "buenos-aires",
-  altName: "🇦🇷 Buenos Aires",
+  altName: "🎞️ Buenos Aires in BW",
   month: "August",
   year: "2022",
   isFilm: false,
