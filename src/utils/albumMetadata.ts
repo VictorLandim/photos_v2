@@ -6,6 +6,7 @@ export type AlbumMetadataItem = {
   isFilm: boolean;
   description: string;
   featuredImagePath: string;
+  count: number;
 };
 
 const albumMetadata: AlbumMetadataItem[] = [
@@ -20,6 +21,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji Superia X-Tra 400.
     `,
     featuredImagePath: "34.jpg",
+    count: 22,
   },
   {
     name: "santa-marta",
@@ -32,6 +34,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji Superia X-Tra 400.
     `,
     featuredImagePath: "1.jpg",
+    count: 17,
   },
   {
     name: "buenos-aires",
@@ -44,6 +47,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fujifilm X-E2.
     `,
     featuredImagePath: "52.jpg",
+    count: 39,
   },
   {
     name: "patagonia",
@@ -56,6 +60,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Kodak Vision 250D, Kodak Portra 400.
     `,
     featuredImagePath: "13.jpg",
+    count: 18,
   },
   {
     name: "mendoza-maragogi-chapada",
@@ -68,6 +73,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Kodak Vision 250D, Kodak Portra 400.
     `,
     featuredImagePath: "6.jpg",
+    count: 15,
   },
   {
     name: "nea-kameni",
@@ -80,6 +86,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji XE2 - Velvia.
     `,
     featuredImagePath: "5.jpg",
+    count: 29,
   },
   {
     name: "ancient-thera",
@@ -92,6 +99,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Fuji XE2 - Velvia.
     `,
     featuredImagePath: "2.jpg",
+    count: 35,
   },
   {
     name: "barcelona",
@@ -104,6 +112,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Ricoh GR IIIx.
     `,
     featuredImagePath: "8.jpg",
+    count: 18,
   },
   {
     name: "london",
@@ -116,6 +125,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Ricoh GR IIIx.
     `,
     featuredImagePath: "18.jpg",
+    count: 34,
   },
   {
     name: "suceava",
@@ -128,6 +138,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Ricoh GR IIIx.
     `,
     featuredImagePath: "8.JPG",
+    count: 40,
   },
   {
     name: "fungi",
@@ -140,6 +151,7 @@ const albumMetadata: AlbumMetadataItem[] = [
       Ricoh GR IIIx.
     `,
     featuredImagePath: "R0001103.JPG",
+    count: 51,
   },
 ];
 

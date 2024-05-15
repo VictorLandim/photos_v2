@@ -24,7 +24,7 @@ const renderPhoto = ({ photo }, i) => {
   return (
     <Link
       href={`/${albumSlug}`}
-      className="h-64 w-full lg:h-80"
+      className="h-56 w-full lg:h-80"
       style={{
         gridColumn:
           Math.floor((i + 1) / 2) % 2 ? "span 5 / span 5" : "span 7 / span 7",
@@ -44,9 +44,12 @@ const renderPhoto = ({ photo }, i) => {
           height={size}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20 to-[70%] transition-all duration-300 hover:opacity-90"></div>
+        <div className="absolute left-4 top-4 flex items-center justify-center rounded-full border border-current px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+          {`${photo.count} photos`}
+        </div>
         <div className="absolute bottom-6 left-4 flex w-full max-w-full flex-col text-white lg:left-8">
           <p className="text-base">{date}</p>
-          <h4 className="w-full max-w-[90%] truncate text-4xl font-bold leading-tight">
+          <h4 className="w-full max-w-[90%] truncate text-3xl font-bold leading-tight lg:text-4xl">
             {name}
           </h4>
         </div>
