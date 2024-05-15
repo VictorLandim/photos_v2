@@ -125,7 +125,7 @@ export async function generateMetadata(
 
   return {
     ...meta,
-    title: `albums | ${meta.title}`,
+    title: `${meta.title} | Made with SunnyShot`,
     openGraph: {
       ...meta.openGraph,
       images: [imageUrl, ...previousImages],
