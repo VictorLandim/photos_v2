@@ -61,7 +61,7 @@ export const AlbumGrid = (props: AlbumGridProps) => {
       <ul className="mb-8">
         <div className="flex items-start   justify-between">
           <h2 className="mb-3 text-lg font-bold text-gray-950 lg:text-2xl dark:text-white">
-            Featured trips
+            Recent trips
           </h2>
           <a
             href=""
