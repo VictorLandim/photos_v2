@@ -11,7 +11,7 @@ export type AlbumMetadataItem = {
 
 const FLORIPA: AlbumMetadataItem = {
   name: "floripa",
-  altName: "🇧🇷 Floripa",
+  altName: "🌊 Floripa waves",
   month: "January",
   year: "2023",
   isFilm: true,
