@@ -10,6 +10,7 @@ import {
   GlobeAmericasIcon,
   MapPinIcon,
   ShareIcon,
+  SunIcon,
 } from "@heroicons/react/24/solid";
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
@@ -31,12 +32,19 @@ const Hero = () => (
       </div>
     </div>
     <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
-      <div className="flex gap-4 lg:gap-8">
-        <img
-          alt="avatar"
-          className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
-          src="https://avatars.githubusercontent.com/u/5438965?v=4"
-        />
+      <div className="relative flex gap-4 lg:gap-8">
+        <div className="relative">
+          <img
+            alt="avatar"
+            className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
+            src="https://avatars.githubusercontent.com/u/5438965?v=4"
+          />
+          <div className="absolute bottom-[46px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-pink-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:scale-100">
+            <SunIcon className="size-4" />
+
+            <span>pioneer</span>
+          </div>
+        </div>
         <div className="mt-8 flex flex-col gap-1 lg:mt-14 lg:gap-2">
           <div className="flex items-end">
             <div className="flex items-center gap-2">
