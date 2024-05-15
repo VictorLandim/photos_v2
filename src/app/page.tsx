@@ -118,10 +118,7 @@ const getProps = async () => {
     };
   });
 
-  const albumList = (await Promise.all(albumPromiseList)).sort(
-    // @ts-ignore
-    (a, b) => `${b.year}${b.month}` - `${a.year}${a.month}`
-  );
+  const albumList = await Promise.all(albumPromiseList);
 
   return {
     albumList,
