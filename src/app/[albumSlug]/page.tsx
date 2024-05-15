@@ -8,6 +8,7 @@ import { getImageUrl } from "@/utils/getImageUrl";
 import imagesToGalleryImages from "@/utils/imagesToGalleryImages";
 import meta from "@/utils/meta";
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
 
 type PageProps = {
   params: {
@@ -18,6 +19,7 @@ type PageProps = {
 const AlbumDetailPage = async (props: PageProps) => {
   const { albumSlug } = props.params;
   const albumDisplayName = getAlbumDisplayName(albumSlug);
+  if (!albumDisplayName) return notFound();
   const { images } = await getProps({ albumSlug });
 
   return (
@@ -52,6 +54,8 @@ export async function generateMetadata(
   const metadata = albumMetadata.find(
     (album) => album.name === params.albumSlug
   );
+
+  if (!metadata) return {};
 
   const imageWidth = 500;
   const path = `victorphotos/${params.albumSlug}/${metadata.featuredImagePath}`;

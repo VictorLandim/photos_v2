@@ -17,7 +17,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <MobileLayoutProvider>
           <div className="flex min-h-screen flex-col bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 dark:from-black dark:via-neutral-900 dark:to-black">
-            <main>{children}</main>
+            <main className="min-h-full">{children}</main>
             <SunnyShotBanner />
           </div>
         </MobileLayoutProvider>

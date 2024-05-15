@@ -10,7 +10,7 @@ type Item = AlbumMetadataItem & {
   featuredImageBlurUrl: string;
 };
 
-type ContentProps = {
+type AlbumGridProps = {
   albumList: Item[];
 };
 
@@ -55,7 +55,7 @@ const renderPhoto = ({ photo }, i) => {
   );
 };
 
-export const Content = (props: ContentProps) => {
+export const AlbumGrid = (props: AlbumGridProps) => {
   return (
     <Container>
       <ul className="mb-8">
