@@ -24,17 +24,16 @@ const renderPhoto = ({ photo }, i) => {
   return (
     <Link
       href={`/${albumSlug}`}
-      className="h-56 w-full lg:h-80"
+      className="group h-56 w-full lg:h-80"
       style={{
         gridColumn:
           Math.floor((i + 1) / 2) % 2 ? "span 5 / span 5" : "span 7 / span 7",
       }}
     >
-      <div className="relative h-full w-full overflow-hidden rounded-xl shadow-xl transition-all duration-300 hover:scale-[1.015]">
+      <div className="relative h-full w-full overflow-hidden rounded-xl shadow-xl">
         <Image
           alt={name}
-          className="absolute inset-0 h-full w-full rounded-t-sm object-cover"
-          style={{ transform: "translate3d(0, 0, 0)" }}
+          className="absolute inset-0 h-full w-full rounded-t-sm object-cover transition-all duration-200 group-hover:scale-110"
           placeholder="blur"
           blurDataURL={imageBlurUrl}
           title={name}
