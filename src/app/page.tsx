@@ -11,6 +11,7 @@ import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import heroImg from "../../public/assets/balos2.webp";
 import profile from "../../public/profile.jpeg";
+import "leaflet/dist/leaflet.css";
 
 const Hero = () => (
   <div className="relative">

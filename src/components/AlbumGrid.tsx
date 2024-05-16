@@ -3,8 +3,10 @@
 import { Container } from "@/components/Container";
 import { AlbumMetadataItem } from "@/utils/albumMetadata";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
 
 type Item = AlbumMetadataItem & {
   featuredImageBlurUrl: string;
@@ -65,6 +67,14 @@ const renderPhoto = ({ photo }, i) => {
 };
 
 export const AlbumGrid = (props: AlbumGridProps) => {
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("./AlbumsMap").then((mod) => mod.AlbumsMap), {
+        ssr: false,
+      }),
+    []
+  );
+
   return (
     <Container>
       <ul className="mb-8">
@@ -100,7 +110,9 @@ export const AlbumGrid = (props: AlbumGridProps) => {
                 )}
               </div>
             </TabPanel>
-            <TabPanel>Map goes here</TabPanel>
+            <TabPanel>
+              <Map />
+            </TabPanel>
           </TabPanels>
         </TabGroup>
       </ul>
