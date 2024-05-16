@@ -13,7 +13,7 @@ import "../styles/globals.css";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" className={`dark bg-black antialiased ${font.className}`}>
+    <html lang="en" className={`dark1 bg-black antialiased ${font.className}`}>
       <body>
         <MobileLayoutProvider>
           <div className="flex min-h-screen flex-col bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 dark:from-black dark:via-neutral-900 dark:to-black">

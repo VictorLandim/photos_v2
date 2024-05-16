@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/Container";
 import { AlbumMetadataItem } from "@/utils/albumMetadata";
-import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -68,14 +68,41 @@ export const AlbumGrid = (props: AlbumGridProps) => {
   return (
     <Container>
       <ul className="mb-8">
-        <div className="flex items-start justify-between">
-          <h2 className="mb-3 text-lg font-bold text-gray-950 lg:text-2xl dark:text-white">
-            Recent trips
-          </h2>
-        </div>
-        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-12">
-          {props.albumList.map((item, i) => renderPhoto({ photo: item }, i))}
-        </div>
+        <TabGroup defaultIndex={0}>
+          <TabList className="mb-6 flex gap-2">
+            {["Gallery", "Map"].map((item) => (
+              <Tab
+                className="rounded-full px-5 py-2 text-base font-semibold text-gray-950 focus:outline-none
+
+              data-[hover]:bg-black/10
+              data-[selected]:bg-black/5
+              data-[selected]:data-[hover]:bg-black/5
+              data-[focus]:outline-1
+              data-[focus]:outline-black/50
+
+              lg:text-2xl
+
+              dark:text-white
+              dark:data-[hover]:bg-white/5
+              dark:data-[selected]:bg-white/10
+              dark:data-[selected]:data-[hover]:bg-white/10
+              dark:data-[focus]:outline-white"
+              >
+                {item}
+              </Tab>
+            ))}
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <div className="flex flex-col gap-4 lg:grid lg:grid-cols-12">
+                {props.albumList.map((item, i) =>
+                  renderPhoto({ photo: item }, i)
+                )}
+              </div>
+            </TabPanel>
+            <TabPanel>Map goes here</TabPanel>
+          </TabPanels>
+        </TabGroup>
       </ul>
     </Container>
   );
