@@ -61,18 +61,18 @@ const Hero = () => (
             <MapPinIcon className="size-4" />
             Cluj-Napoca
           </p>
-          <div className="mt-4 flex items-center gap-8">
+          <div className="mt-4 flex items-center gap-6">
             {[
               ["9", "albums"],
               ["321", "photos"],
-              ["13k", "views"],
+              ["6", "countries"],
             ].map((item) => {
               return (
                 <div className="flex flex-col gap-1 text-center">
-                  <span className="text-base font-medium text-gray-900 lg:text-lg dark:text-gray-50">
+                  <span className="text-base font-bold text-gray-900 lg:text-lg dark:text-gray-50">
                     {item[0]}
                   </span>
-                  <span className="text-xs uppercase text-gray-500 lg:text-sm">
+                  <span className="text-xs font-medium uppercase text-gray-500 lg:text-sm">
                     {item[1]}
                   </span>
                 </div>
