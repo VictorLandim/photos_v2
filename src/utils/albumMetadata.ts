@@ -11,6 +11,18 @@ export type AlbumMetadataItem = {
   pos?: [number, number];
 };
 
+const SALVADOR: AlbumMetadataItem = {
+  name: "salvador",
+  altName: "☀️ Salvador summer",
+  country: "🇧🇷 Brazil",
+  month: "May",
+  year: "2021",
+  isFilm: false,
+  description: "Salvador - Brazil. Fuji Xtra 400",
+  featuredImagePath: "b_10.jpg",
+  count: 65,
+  pos: [-12.974722, -38.476665],
+};
 const CHAPADA: AlbumMetadataItem = {
   name: "chapada",
   altName: "🌾 Chapada hike",
@@ -209,6 +221,7 @@ const albumMetadata: AlbumMetadataItem[] = [
   BARCELONA,
   FUNGI,
   LONDON,
+  SALVADOR,
   MENDOZA,
   BUENOS_AIRES,
 ];
