@@ -34,7 +34,7 @@ const AlbumDetailPage = async (props: PageProps) => {
   const Header = () => {
     return (
       <header className="">
-        <div className="mb-4 flex items-center justify-between px-2 py-2 lg:mb-8">
+        <div className="mb-4 flex items-center justify-between p-2 lg:mb-8">
           <SunnyShotLink />
 
           <button className="flex size-8 appearance-none items-center justify-center rounded-full border border-current bg-gray-50 text-gray-700 transition-all hover:bg-gray-200 lg:size-10 dark:bg-neutral-900 dark:text-gray-100 dark:hover:bg-neutral-800">

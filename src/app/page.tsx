@@ -24,7 +24,7 @@ const Hero = () => (
         fill
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
-      <div className="p-4">
+      <div className="p-5">
         <SunnyShotLink white />
       </div>
     </div>
