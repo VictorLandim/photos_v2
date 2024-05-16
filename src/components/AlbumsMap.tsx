@@ -5,9 +5,8 @@ import { Item } from "./AlbumGrid";
 import cloudinaryLoader from "../utils/cloudinaryLoader";
 
 export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
-  const x = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  const url =
-    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{@2x}.png";
+  let url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  url = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{@2x}.png";
 
   const icons = albumList
     .filter((album) => !!album.pos)
