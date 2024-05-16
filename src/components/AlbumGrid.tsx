@@ -110,7 +110,12 @@ export const AlbumGrid = (props: AlbumGridProps) => {
                 )}
               </div>
             </TabPanel>
-            <TabPanel>
+            <TabPanel
+              className="
+            h-[300px] *:*:h-[300px]
+            lg:h-[600px] *:*:lg:h-[600px]
+            "
+            >
               <Map />
             </TabPanel>
           </TabPanels>
