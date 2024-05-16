@@ -17,7 +17,7 @@ export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
           iconSize: [80, 80],
           className: "opacity-80 hover:opacity-100 transition-all",
           html: `
-        <div class="size-[80px] shadow-lg hover:scale-125 z-0 hover:z-100 transition-all relative flex items-center justify-center h-full w-full rounded-lg border-4 border-white text-black bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.95), transparent 40%), url(${cloudinaryLoader(
+        <div class="size-[80px] shadow-lg hover:scale-125 z-0 hover:z-100 transition-all relative flex items-center justify-center h-full w-full rounded-lg border-4 border-white text-black bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.99), transparent 60%), url(${cloudinaryLoader(
           {
             src: "victorphotos/" + album.name + "/" + album.featuredImagePath,
             width: 300,
@@ -28,7 +28,7 @@ export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
           album.count
         }</div>
         <div class="absolute bottom-[2px] left-[4px] text-[9px] text-white font-semibold">${
-          album.name
+          album.altName
         }</div>
         </div>
        `,
