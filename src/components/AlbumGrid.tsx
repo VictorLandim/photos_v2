@@ -24,13 +24,13 @@ const renderPhoto = ({ photo }, i) => {
   return (
     <Link
       href={`/${albumSlug}`}
-      className="group h-56 w-full lg:h-80"
+      className="group h-56 w-full rounded-xl border border-transparent lg:h-80 dark:border-gray-50/10"
       style={{
         gridColumn:
           Math.floor((i + 1) / 2) % 2 ? "span 5 / span 5" : "span 7 / span 7",
       }}
     >
-      <div className="relative h-full w-full overflow-hidden rounded-xl shadow-xl">
+      <div className="relative h-full w-full overflow-hidden rounded-[11px] shadow-xl">
         <Image
           alt={name}
           className="absolute inset-0 h-full w-full rounded-t-sm object-cover transition-all duration-200 lg:group-hover:scale-110"
