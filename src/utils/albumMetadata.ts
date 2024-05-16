@@ -8,10 +8,7 @@ export type AlbumMetadataItem = {
   featuredImagePath: string;
   count: number;
   country: string;
-  pos?: {
-    lat: number;
-    lon: number;
-  };
+  pos?: [number, number];
 };
 
 const FLORIPA: AlbumMetadataItem = {
@@ -27,10 +24,7 @@ const FLORIPA: AlbumMetadataItem = {
   `,
   featuredImagePath: "34.jpg",
   count: 22,
-  pos: {
-    lat: -27.5935,
-    lon: -48.55854,
-  },
+  pos: [-27.5935, -48.55854],
 };
 
 const SANTA_MARTA: AlbumMetadataItem = {
@@ -46,10 +40,7 @@ const SANTA_MARTA: AlbumMetadataItem = {
   `,
   featuredImagePath: "1.jpg",
   count: 17,
-  pos: {
-    lat: 11.233,
-    lon: -74.2,
-  },
+  pos: [11.233, -74.2],
 };
 
 const PATAGONIA: AlbumMetadataItem = {
@@ -65,6 +56,7 @@ const PATAGONIA: AlbumMetadataItem = {
   `,
   featuredImagePath: "13.jpg",
   count: 18,
+  pos: [-49.335876, -72.88192],
 };
 
 const MENDOZA: AlbumMetadataItem = {
@@ -95,6 +87,7 @@ const NEA_KAMENI: AlbumMetadataItem = {
     `,
   featuredImagePath: "5.jpg",
   count: 29,
+  pos: [36.405541, 25.395489],
 };
 
 const ANCIENT_THERA: AlbumMetadataItem = {
@@ -110,6 +103,7 @@ const ANCIENT_THERA: AlbumMetadataItem = {
   `,
   featuredImagePath: "2.jpg",
   count: 35,
+  pos: [36.393154, 25.46151],
 };
 
 const BARCELONA: AlbumMetadataItem = {
@@ -125,6 +119,7 @@ const BARCELONA: AlbumMetadataItem = {
   `,
   featuredImagePath: "8.jpg",
   count: 18,
+  pos: [41.390205, 2.154007],
 };
 
 const LONDON: AlbumMetadataItem = {
@@ -140,6 +135,7 @@ const LONDON: AlbumMetadataItem = {
   `,
   featuredImagePath: "18.jpg",
   count: 34,
+  pos: [51.509865, -0.118092],
 };
 
 const SUCEAVA: AlbumMetadataItem = {
@@ -155,6 +151,7 @@ const SUCEAVA: AlbumMetadataItem = {
   `,
   featuredImagePath: "8.JPG",
   count: 40,
+  pos: [47.63333, 26.25],
 };
 
 const FUNGI: AlbumMetadataItem = {
@@ -185,6 +182,7 @@ const BUENOS_AIRES: AlbumMetadataItem = {
   `,
   featuredImagePath: "52.jpg",
   count: 39,
+  pos: [-34.603722, -58.381592],
 };
 
 const albumMetadata: AlbumMetadataItem[] = [
