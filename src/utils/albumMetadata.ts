@@ -11,6 +11,19 @@ export type AlbumMetadataItem = {
   pos?: [number, number];
 };
 
+const CHAPADA: AlbumMetadataItem = {
+  name: "chapada",
+  altName: "🌾 Chapada hike",
+  country: "🇧🇷 Brazil",
+  month: "May",
+  year: "2024",
+  isFilm: false,
+  description: "Chapada dos Veadeiros - Brazil. Ricoh GRIIIx",
+  featuredImagePath: "R0006805.JPG",
+  count: 40,
+  pos: [-14.1336, -47.5215],
+};
+
 const FLORIPA: AlbumMetadataItem = {
   name: "floripa",
   altName: "🌊 Floripa waves",
@@ -186,6 +199,7 @@ const BUENOS_AIRES: AlbumMetadataItem = {
 };
 
 const albumMetadata: AlbumMetadataItem[] = [
+  CHAPADA,
   PATAGONIA,
   FLORIPA,
   SUCEAVA,
