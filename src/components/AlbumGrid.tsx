@@ -33,7 +33,7 @@ const renderPhoto = ({ photo }, i) => {
       <div className="relative h-full w-full overflow-hidden rounded-xl shadow-xl">
         <Image
           alt={name}
-          className="absolute inset-0 h-full w-full rounded-t-sm object-cover transition-all duration-200 group-hover:scale-110"
+          className="absolute inset-0 h-full w-full rounded-t-sm object-cover transition-all duration-200 lg:group-hover:scale-110"
           placeholder="blur"
           blurDataURL={imageBlurUrl}
           title={name}
