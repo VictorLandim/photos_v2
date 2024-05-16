@@ -66,7 +66,9 @@ export default AlbumDetailPage;
 
 const getProps = async ({ albumSlug }) => {
   const images = await getCloudinaryImages(albumSlug);
-  const galleryImages = imagesToGalleryImages(images);
+  const galleryImages = imagesToGalleryImages(images).sort((a, b) =>
+    a.src.localeCompare(b.src, undefined, { numeric: true })
+  );
 
   return {
     images: galleryImages,
