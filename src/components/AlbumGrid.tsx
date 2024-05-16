@@ -8,11 +8,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 
-type Item = AlbumMetadataItem & {
+export type Item = AlbumMetadataItem & {
   featuredImageBlurUrl: string;
 };
 
-type AlbumGridProps = {
+export type AlbumGridProps = {
   albumList: Item[];
 };
 
@@ -116,7 +116,7 @@ export const AlbumGrid = (props: AlbumGridProps) => {
             lg:h-[600px] *:*:lg:h-[600px]
             "
             >
-              <Map />
+              <Map albumList={props.albumList} />
             </TabPanel>
           </TabPanels>
         </TabGroup>

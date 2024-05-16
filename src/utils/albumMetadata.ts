@@ -8,6 +8,10 @@ export type AlbumMetadataItem = {
   featuredImagePath: string;
   count: number;
   country: string;
+  pos?: {
+    lat: number;
+    lon: number;
+  };
 };
 
 const FLORIPA: AlbumMetadataItem = {
@@ -23,6 +27,10 @@ const FLORIPA: AlbumMetadataItem = {
   `,
   featuredImagePath: "34.jpg",
   count: 22,
+  pos: {
+    lat: -27.5935,
+    lon: -48.55854,
+  },
 };
 
 const SANTA_MARTA: AlbumMetadataItem = {
@@ -38,6 +46,10 @@ const SANTA_MARTA: AlbumMetadataItem = {
   `,
   featuredImagePath: "1.jpg",
   count: 17,
+  pos: {
+    lat: 11.233,
+    lon: -74.2,
+  },
 };
 
 const PATAGONIA: AlbumMetadataItem = {
