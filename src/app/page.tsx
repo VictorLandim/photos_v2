@@ -15,6 +15,7 @@ import {
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import heroImg from "../../public/assets/balos2.webp";
+import profile from "../../public/profile.jpeg";
 
 const Hero = () => (
   <div className="relative">
@@ -37,7 +38,7 @@ const Hero = () => (
           <img
             alt="avatar"
             className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
-            src="https://avatars.githubusercontent.com/u/5438965?v=4"
+            src={profile.src}
           />
           <div className="absolute bottom-[46px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-pink-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:scale-100">
             <SunIcon className="size-4" />

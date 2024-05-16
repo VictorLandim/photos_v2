@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useMobileLayout } from "../contexts/MobileLayoutContext";
+import profile from "../../public/profile.jpeg";
 
 const AlbumHeading = () => {
   const { mobileLayout, toggle } = useMobileLayout();
@@ -18,7 +19,7 @@ const AlbumHeading = () => {
         <img
           alt="avatar"
           className="size-10 rounded-full shadow-lg outline outline-2 outline-white lg:size-12 dark:outline-black"
-          src="https://avatars.githubusercontent.com/u/5438965?v=4"
+          src={profile.src}
         />
         <div className="flex flex-col dark:text-white">
           <div className="text-base font-bold leading-none text-gray-800 lg:text-lg dark:text-gray-100">
