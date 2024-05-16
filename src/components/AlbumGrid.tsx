@@ -43,8 +43,15 @@ const renderPhoto = ({ photo }, i) => {
           height={size}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20 to-[70%] transition-all duration-300 hover:opacity-90"></div>
-        <div className="absolute left-4 top-4 flex items-center justify-center rounded-full border border-current px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-          {`${photo.count} photos`}
+        <div className="absolute left-4 top-4 flex gap-2">
+          {photo.country && (
+            <div className="flex items-center justify-center rounded-full border border-current px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+              {photo.country}
+            </div>
+          )}
+          <div className="flex items-center justify-center rounded-full border border-current  px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+            {`${photo.count} photos`}
+          </div>
         </div>
         <div className="absolute bottom-6 left-4 flex w-full max-w-full flex-col text-white lg:left-8">
           <p className="text-base">{date}</p>
@@ -61,17 +68,10 @@ export const AlbumGrid = (props: AlbumGridProps) => {
   return (
     <Container>
       <ul className="mb-8">
-        <div className="flex items-start   justify-between">
+        <div className="flex items-start justify-between">
           <h2 className="mb-3 text-lg font-bold text-gray-950 lg:text-2xl dark:text-white">
             Recent trips
           </h2>
-          <a
-            href=""
-            className="flex items-center gap-1 text-base text-gray-500 hover:underline lg:text-lg dark:text-gray-300"
-          >
-            <span>See all</span>
-            <ChevronRightIcon className="size-4" />
-          </a>
         </div>
         <div className="flex flex-col gap-4 lg:grid lg:grid-cols-12">
           {props.albumList.map((item, i) => renderPhoto({ photo: item }, i))}

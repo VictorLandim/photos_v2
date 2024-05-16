@@ -7,11 +7,13 @@ export type AlbumMetadataItem = {
   description: string;
   featuredImagePath: string;
   count: number;
+  country: string;
 };
 
 const FLORIPA: AlbumMetadataItem = {
   name: "floripa",
   altName: "🌊 Floripa waves",
+  country: "🇧🇷 Brazil",
   month: "January",
   year: "2023",
   isFilm: true,
@@ -25,6 +27,7 @@ const FLORIPA: AlbumMetadataItem = {
 
 const SANTA_MARTA: AlbumMetadataItem = {
   name: "santa-marta",
+  country: "🇨🇴 Colombia",
   altName: "💛 Love in Colombia",
   month: "March",
   year: "2023",
@@ -39,6 +42,7 @@ const SANTA_MARTA: AlbumMetadataItem = {
 
 const PATAGONIA: AlbumMetadataItem = {
   name: "patagonia",
+  country: "🇦🇷 Argentina",
   altName: "🏔️ Patagonia adventure",
   month: "April",
   year: "2023",
@@ -53,6 +57,7 @@ const PATAGONIA: AlbumMetadataItem = {
 
 const MENDOZA: AlbumMetadataItem = {
   name: "mendoza-maragogi-chapada",
+  country: "🇦🇷 Argentina",
   altName: "🍃 Spring sun",
   month: "April",
   year: "2023",
@@ -67,6 +72,7 @@ const MENDOZA: AlbumMetadataItem = {
 
 const NEA_KAMENI: AlbumMetadataItem = {
   name: "nea-kameni",
+  country: "🇬🇷 Greece",
   altName: "🌋 Nea Kameni",
   month: "June",
   year: "2023",
@@ -81,6 +87,7 @@ const NEA_KAMENI: AlbumMetadataItem = {
 
 const ANCIENT_THERA: AlbumMetadataItem = {
   name: "ancient-thera",
+  country: "🇬🇷 Greece",
   altName: "🏛️ Hike in Ancient Thera",
   month: "June",
   year: "2023",
@@ -95,6 +102,7 @@ const ANCIENT_THERA: AlbumMetadataItem = {
 
 const BARCELONA: AlbumMetadataItem = {
   name: "barcelona",
+  country: "🇪🇸 Spain",
   altName: "🇪🇸 Barcelona summer",
   month: "August",
   year: "2023",
@@ -109,6 +117,7 @@ const BARCELONA: AlbumMetadataItem = {
 
 const LONDON: AlbumMetadataItem = {
   name: "london",
+  country: "🇬🇧 United Kingdom",
   altName: "🇬🇧 First time in London",
   month: "October",
   year: "2023",
@@ -123,6 +132,7 @@ const LONDON: AlbumMetadataItem = {
 
 const SUCEAVA: AlbumMetadataItem = {
   name: "suceava",
+  country: "🇷🇴 Romania",
   altName: "🇷🇴 Bukovina hike",
   month: "October",
   year: "2023",
@@ -137,6 +147,7 @@ const SUCEAVA: AlbumMetadataItem = {
 
 const FUNGI: AlbumMetadataItem = {
   name: "fungi",
+  country: "",
   altName: "🍄 Cool mushrooms",
   month: "July",
   year: "2023",
@@ -151,6 +162,7 @@ const FUNGI: AlbumMetadataItem = {
 
 const BUENOS_AIRES: AlbumMetadataItem = {
   name: "buenos-aires",
+  country: "🇦🇷 Argentina",
   altName: "🎞️ Buenos Aires in BW",
   month: "August",
   year: "2022",
