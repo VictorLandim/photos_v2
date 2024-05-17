@@ -1,5 +1,6 @@
 import AlbumHeading from "@/components/AlbumHeading";
 import Gallery from "@/components/Gallery";
+import { ShareButton } from "@/components/ShareButton";
 import { SunnyShotLink } from "@/components/SunnyShotLink";
 import albumMetadata from "@/utils/albumMetadata";
 import { getAlbumDisplayName } from "@/utils/getAlbumDisplayName";
@@ -8,12 +9,7 @@ import getCloudinaryImages from "@/utils/getCloudinaryImages";
 import { getImageUrl } from "@/utils/getImageUrl";
 import imagesToGalleryImages from "@/utils/imagesToGalleryImages";
 import meta from "@/utils/meta";
-import {
-  ArrowUpOnSquareIcon,
-  RectangleStackIcon,
-} from "@heroicons/react/24/outline";
 import { Metadata, ResolvingMetadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type PageProps = {
@@ -41,9 +37,7 @@ const AlbumDetailPage = async (props: PageProps) => {
             <div className="font-bold">victor</div>
           </div>
 
-          <button className="flex size-8 appearance-none items-center justify-center rounded-full border border-current bg-gray-50 text-gray-700 transition-all hover:bg-gray-200 lg:size-10 dark:bg-neutral-900 dark:text-gray-100 dark:hover:bg-neutral-800">
-            <ArrowUpOnSquareIcon className="size-5" />
-          </button>
+          <ShareButton />
         </div>
         <div className="mx-auto max-w-xs text-center">
           <p className="mb-2 text-base text-gray-500 dark:text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>

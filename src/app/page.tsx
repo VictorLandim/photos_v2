@@ -1,17 +1,18 @@
 import { AlbumGrid } from "@/components/AlbumGrid";
 import { Container } from "@/components/Container";
+import { ShareButton } from "@/components/ShareButton";
 import { SunnyShotLink } from "@/components/SunnyShotLink";
 import albumMetadata, { FEATURED_ALBUM } from "@/utils/albumMetadata";
 import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import getAlbumNames from "@/utils/getAlbumNames";
 import { getImageUrl } from "@/utils/getImageUrl";
 import meta from "@/utils/meta";
-import { MapPinIcon, ShareIcon, SunIcon } from "@heroicons/react/24/solid";
+import { MapPinIcon, SunIcon } from "@heroicons/react/24/solid";
+import "leaflet/dist/leaflet.css";
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import heroImg from "../../public/assets/balos2.webp";
 import profile from "../../public/profile.jpeg";
-import "leaflet/dist/leaflet.css";
 
 const Hero = () => (
   <div className="relative">
@@ -78,9 +79,7 @@ const Hero = () => (
         </div>
       </div>
       <div className="mt-8 flex gap-3 self-start lg:mt-14 lg:gap-4">
-        <button className="inline-flex size-8 appearance-none items-center justify-center rounded-full border border-gray-300 bg-slate-100 text-gray-800 transition-all hover:bg-gray-100 lg:size-12 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800">
-          <ShareIcon className="size-4 lg:size-5" />
-        </button>
+        <ShareButton />
       </div>
     </Container>
   </div>
