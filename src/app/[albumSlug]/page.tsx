@@ -39,12 +39,14 @@ const AlbumDetailPage = async (props: PageProps) => {
 
           <ShareButton />
         </div>
-        <div className="mx-auto max-w-xs text-center">
+        <div className="mx-auto max-w-xs text-center lg:max-w-full">
           <p className="mb-2 text-base text-gray-500 dark:text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>
           <h1 className="mb-4 text-5xl font-bold text-gray-900 lg:text-7xl dark:text-white">
             {albumName}
           </h1>
-          <p className="text-lg text-gray-400">{meta.description}</p>
+          <p className="mx-auto max-w-lg text-lg text-gray-400">
+            {meta.description}
+          </p>
         </div>
       </header>
     );
