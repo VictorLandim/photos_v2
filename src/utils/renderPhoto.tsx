@@ -40,7 +40,7 @@ const renderPhoto = (renderPhotoProps: RenderPhotoProps<GalleryImageProps>) => {
           src={src}
           width={renderedWidth}
           height={renderedHeight}
-          loading={id <= 8 ? "eager" : "lazy"}
+          loading={id <= 4 ? "eager" : "lazy"}
           onClick={open}
           sizes={sizes}
         />
