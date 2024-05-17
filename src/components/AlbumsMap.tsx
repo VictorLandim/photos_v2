@@ -19,7 +19,7 @@ export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
           html: `
         <a href="/${
           album.name
-        }" class="size-[80px] shadow-lg hover:scale-125 transition-all relative flex items-center justify-center h-full w-full rounded-lg border-4 border-white text-black bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.99), transparent 60%), url(${cloudinaryLoader(
+        }" class="size-[80px] shadow-lg hover:scale-[1.5] transition-all relative flex items-center justify-center h-full w-full rounded-lg border-4 border-white text-black bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(0,0,0,0.99), transparent 60%), url(${cloudinaryLoader(
             {
               src: "victorphotos/" + album.name + "/" + album.featuredImagePath,
               width: 300,

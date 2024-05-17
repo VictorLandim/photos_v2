@@ -84,18 +84,18 @@ export const AlbumGrid = (props: AlbumGridProps) => {
               <Tab
                 className="rounded-full px-5 py-2 text-base font-semibold text-gray-950 focus:outline-none
 
-              data-[hover]:bg-black/10
-              data-[selected]:bg-black/5
-              data-[selected]:data-[hover]:bg-black/5
+              data-[hover]:bg-gray-400/10
+              data-[selected]:bg-gray-600/10
+              data-[selected]:data-[hover]:bg-gray-600/10
               data-[focus]:outline-1
               data-[focus]:outline-black/50
 
               lg:text-2xl
 
               dark:text-white
-              dark:data-[hover]:bg-white/5
-              dark:data-[selected]:bg-white/10
-              dark:data-[selected]:data-[hover]:bg-white/10
+              dark:data-[hover]:bg-white/10
+              dark:data-[selected]:bg-white/15
+              dark:data-[selected]:data-[hover]:bg-white/15
               dark:data-[focus]:outline-white"
               >
                 {item}
