@@ -37,7 +37,7 @@ const Hero = () => (
             className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
             src={profile.src}
           />
-          <div className="absolute bottom-[46px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-pink-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:scale-100">
+          <div className="absolute bottom-[46px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:scale-100">
             <SunIcon className="size-4" />
 
             <span>pioneer</span>
