@@ -35,7 +35,11 @@ const AlbumDetailPage = async (props: PageProps) => {
     return (
       <header className="">
         <div className="mb-4 flex items-center justify-between p-2 lg:mb-8">
-          <SunnyShotLink />
+          <div className="flex items-center gap-1 text-sm font-bold text-gray-950 lg:text-base dark:text-gray-100">
+            <SunnyShotLink />
+            <div className="div">/</div>
+            <div className="font-bold">victor</div>
+          </div>
 
           <button className="flex size-8 appearance-none items-center justify-center rounded-full border border-current bg-gray-50 text-gray-700 transition-all hover:bg-gray-200 lg:size-10 dark:bg-neutral-900 dark:text-gray-100 dark:hover:bg-neutral-800">
             <ArrowUpOnSquareIcon className="size-5" />
