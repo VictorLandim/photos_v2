@@ -37,15 +37,15 @@ const Hero = () => (
             className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
             src={profile.src}
           />
-          <div className="absolute bottom-[46px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:scale-100">
+          <div className="absolute bottom-[55px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:bottom-[65px] lg:scale-100">
             <SunIcon className="size-4" />
 
             <span>pioneer</span>
           </div>
         </div>
-        <div className="mt-8 flex flex-col gap-1 lg:mt-14 lg:gap-2">
+        <div className="mt-8 flex flex-col lg:mt-14">
           <div className="flex items-end">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 lg:mb-1">
               <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
                 Victor Lan
               </h5>
@@ -54,11 +54,11 @@ const Hero = () => (
               </pre>
             </div>
           </div>
-          <p className="mt-1 flex items-center gap-1 text-sm text-gray-500 lg:text-base dark:text-gray-400">
+          <p className="mt-1 flex items-center gap-1 text-base text-gray-500 lg:text-xl dark:text-gray-400">
             <MapPinIcon className="size-4" />
             Cluj-Napoca
           </p>
-          <div className="mt-4 flex items-center gap-4 lg:gap-5">
+          <div className="mt-6 flex items-center gap-4 lg:mt-10 lg:gap-5">
             {[
               ["9", "albums"],
               ["321", "photos"],
@@ -66,10 +66,10 @@ const Hero = () => (
             ].map((item) => {
               return (
                 <div className="flex flex-col gap-1 text-center">
-                  <span className="text-lg font-bold text-gray-900 dark:text-gray-50">
+                  <span className="text-lg font-bold text-gray-900 lg:text-2xl dark:text-gray-50">
                     {item[0]}
                   </span>
-                  <span className="text-xs font-medium uppercase text-gray-500">
+                  <span className="text-sm font-medium uppercase text-gray-500 lg:text-base">
                     {item[1]}
                   </span>
                 </div>

@@ -5,7 +5,7 @@ module.exports = {
     domains: ["res.cloudinary.com"],
     loader: "custom",
     loaderFile: "./src/utils/cloudinaryLoader.js",
-    minimumCacheTTL: 1000,
+    minimumCacheTTL: 31536000,
   },
   experimental: {
     appDir: true,
