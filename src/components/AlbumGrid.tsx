@@ -47,11 +47,11 @@ const renderPhoto = ({ photo }, i) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20 to-[70%] transition-all duration-300 hover:opacity-90"></div>
         <div className="absolute left-4 top-4 flex gap-2">
           {photo.country && (
-            <div className="flex items-center justify-center rounded-full border border-current px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+            <div className="flex items-center justify-center rounded-full border border-current bg-black/25 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
               {photo.country}
             </div>
           )}
-          <div className="flex items-center justify-center rounded-full border border-current  px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+          <div className="flex items-center justify-center rounded-full border border-current bg-black/25 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
             {`${photo.count} photos`}
           </div>
         </div>
