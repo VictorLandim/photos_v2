@@ -8,7 +8,7 @@ export const SunnyShotLink = ({ white }: { white?: boolean }) => {
     <Link
       href="https://sunnyshot.com"
       className={cn(
-        "inline-flex items-center gap-2 text-base font-bold lg:text-lg",
+        "relative inline-flex items-center gap-2 text-base font-bold lg:text-lg",
         {
           "text-pink-500": !white,
           "text-white": white,
