@@ -45,7 +45,7 @@ const AlbumDetailPage = async (props: PageProps) => {
             <ArrowUpOnSquareIcon className="size-5" />
           </button>
         </div>
-        <div className="text-center">
+        <div className="mx-auto max-w-xs text-center">
           <p className="mb-2 text-base text-gray-500 dark:text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>
           <h1 className="mb-4 text-5xl font-bold text-gray-900 lg:text-7xl dark:text-white">
             {albumName}
