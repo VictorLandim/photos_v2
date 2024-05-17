@@ -112,7 +112,7 @@ export const AlbumGrid = (props: AlbumGridProps) => {
             </TabPanel>
             <TabPanel
               className="
-            h-[300px] *:*:h-[300px]
+            h-[400px] *:*:h-[400px]
             lg:h-[600px] *:*:lg:h-[600px]
             "
             >
