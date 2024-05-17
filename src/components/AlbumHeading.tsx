@@ -32,7 +32,7 @@ const AlbumHeading = () => {
       </Link>
       <button
         onClick={toggle}
-        className="flex appearance-none items-center gap-1 text-base text-gray-500 hover:underline dark:text-gray-300"
+        className="flex appearance-none items-center gap-1 text-base text-gray-500 dark:text-gray-300"
       >
         <Icon className="size-6" />
         <span>{text}</span>
