@@ -46,8 +46,6 @@ const AlbumDetailPage = async (props: PageProps) => {
           </h1>
           <p className="text-lg text-gray-400">{meta.description}</p>
         </div>
-
-        <AlbumHeading />
       </header>
     );
   };
@@ -55,6 +53,7 @@ const AlbumDetailPage = async (props: PageProps) => {
   return (
     <div className="p-3">
       <Header />
+      <AlbumHeading />
       <Gallery photos={images} />
     </div>
   );

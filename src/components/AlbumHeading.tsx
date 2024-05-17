@@ -14,7 +14,7 @@ const AlbumHeading = () => {
   const text = mobileLayout === "single" ? "small" : "large";
 
   return (
-    <div className="mb-4 mt-12 flex items-end justify-between lg:mt-12">
+    <div className="sticky top-0 z-50 mt-10 flex items-center justify-between border-b-[0.5px] border-gray-200 bg-gray-100 py-3 dark:border-gray-800 dark:bg-black">
       <Link href="/" className="flex items-center gap-2">
         <img
           alt="avatar"
@@ -22,7 +22,7 @@ const AlbumHeading = () => {
           src={profile.src}
         />
         <div className="flex flex-col dark:text-white">
-          <div className="text-base font-bold leading-none text-gray-800 lg:text-lg dark:text-gray-100">
+          <div className="text-base font-bold text-gray-800 lg:text-lg/none dark:text-gray-100">
             Victor Lan
           </div>
           <div className="text-sm font-medium text-gray-500 dark:text-gray-200">
