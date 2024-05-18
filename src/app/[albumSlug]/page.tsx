@@ -53,10 +53,14 @@ const AlbumDetailPage = async (props: PageProps) => {
   };
 
   return (
-    <div className="p-3">
-      <Header />
+    <div className="">
+      <div className="p-3">
+        <Header />
+      </div>
       <AlbumHeading />
-      <Gallery photos={images} />
+      <div className="p-3">
+        <Gallery photos={images} />
+      </div>
     </div>
   );
 };
