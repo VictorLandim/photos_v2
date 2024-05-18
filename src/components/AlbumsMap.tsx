@@ -4,7 +4,10 @@ import { Item } from "./AlbumGrid";
 
 import cloudinaryLoader from "../utils/cloudinaryLoader";
 
-const bounds = new LatLngBounds(latLng([-90, -180]), latLng([90, 180]));
+const MAX_BOUNDS = new LatLngBounds([
+  [-90, -180],
+  [90, 180],
+]);
 const MAP_CENTER = [15, -20] as any;
 
 export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
@@ -49,7 +52,7 @@ export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
       center={MAP_CENTER}
       zoom={3}
       minZoom={3}
-      maxBounds={bounds}
+      maxBounds={MAX_BOUNDS}
       scrollWheelZoom={true}
       maxBoundsViscosity={1}
     >
