@@ -1,8 +1,11 @@
-import { DivIcon } from "leaflet";
+import { DivIcon, latLng, LatLngBounds } from "leaflet";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { Item } from "./AlbumGrid";
 
 import cloudinaryLoader from "../utils/cloudinaryLoader";
+
+const bounds = new LatLngBounds(latLng([-90, -180]), latLng([90, 180]));
+const MAP_CENTER = [15, -20] as any;
 
 export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
   let url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
@@ -43,11 +46,14 @@ export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
     <MapContainer
       className="[&_.leaflet-div-icon]:size-0!"
       attributionControl={false}
-      center={[51.505, -0.09]}
-      zoom={2}
+      center={MAP_CENTER}
+      zoom={3}
+      minZoom={3}
+      maxBounds={bounds}
       scrollWheelZoom={true}
+      maxBoundsViscosity={1}
     >
-      <TileLayer url={url} />
+      <TileLayer noWrap url={url} />
       {icons.map(({ icon, pos }) => (
         <Marker icon={icon} position={pos as any} />
       ))}
