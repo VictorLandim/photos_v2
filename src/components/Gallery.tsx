@@ -1,7 +1,7 @@
 "use client";
+import { useGridLayout } from "@/contexts/GridLayoutContext";
 import { PhotoAlbum } from "react-photo-album";
 import { Gallery as PhotoswipeGallery } from "react-photoswipe-gallery";
-import { useMobileLayout } from "../contexts/MobileLayoutContext";
 import renderPhoto from "../utils/renderPhoto";
 import { GalleryImageProps } from "../utils/types";
 
@@ -10,10 +10,10 @@ type GalleryProps = {
 };
 
 const Gallery = ({ photos }: GalleryProps) => {
-  const { mobileLayout } = useMobileLayout();
+  const { gridLayout } = useGridLayout();
 
-  const targetRowHeight = mobileLayout === "multiple" ? 200 : 500;
-  const spacing = mobileLayout === "multiple" ? 8 : 12;
+  const targetRowHeight = gridLayout === "multiple" ? 200 : 500;
+  const spacing = gridLayout === "multiple" ? 8 : 12;
 
   return (
     <PhotoswipeGallery

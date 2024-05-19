@@ -4,14 +4,12 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { useMobileLayout } from "../contexts/MobileLayoutContext";
 import profile from "../../public/profile.jpeg";
+import { cn } from "@/utils/cn";
+import { useGridLayout } from "@/contexts/GridLayoutContext";
 
 const AlbumHeading = () => {
-  const { mobileLayout, toggle } = useMobileLayout();
-
-  const Icon = mobileLayout === "single" ? Squares2X2Icon : RectangleStackIcon;
-  const text = mobileLayout === "single" ? "small" : "large";
+  const { gridLayout, setLayout } = useGridLayout();
 
   return (
     <div className="sticky top-0 z-50 mt-10 flex items-center justify-between border-b-[0.5px] border-gray-200 bg-gray-100 px-3 py-3 dark:border-gray-800 dark:bg-black">
@@ -30,13 +28,28 @@ const AlbumHeading = () => {
           </div>
         </div>
       </Link>
-      <button
-        onClick={toggle}
-        className="flex appearance-none items-center gap-1 text-base text-gray-500 dark:text-gray-300"
-      >
-        <Icon className="size-6" />
-        <span>{text}</span>
-      </button>
+      <div className="flex items-center gap-2">
+        {["single", "multiple"].map((layout) => {
+          const Icon =
+            layout === "single" ? RectangleStackIcon : Squares2X2Icon;
+          return (
+            <button
+              onClick={() => {
+                if (gridLayout !== layout) setLayout(layout as any);
+              }}
+              className={cn(
+                "flex appearance-none items-center gap-1 text-base text-gray-500 transition-all dark:text-gray-300",
+                {
+                  "text-gray-500 dark:text-gray-300": gridLayout === layout,
+                  "text-gray-300 dark:text-gray-500": gridLayout !== layout,
+                }
+              )}
+            >
+              <Icon className="size-6" />
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };
