@@ -11,6 +11,19 @@ export type AlbumMetadataItem = {
   pos?: [number, number];
 };
 
+const CRETE: AlbumMetadataItem = {
+  name: "crete",
+  altName: "🏝️ Crete Island",
+  month: "Jun",
+  year: "2023",
+  isFilm: false,
+  description: "Crete, Balos, Elafonisi. Fuji XE-2 Velvia",
+  count: 56,
+  featuredImagePath: "DSCF3437.JPG",
+  country: "🇬🇷 Greece",
+  pos: [35.417416, 24.530005],
+};
+
 const SALVADOR: AlbumMetadataItem = {
   name: "salvador",
   altName: "☀️ Salvador summer",
@@ -211,6 +224,7 @@ const BUENOS_AIRES: AlbumMetadataItem = {
 };
 
 const albumMetadata: AlbumMetadataItem[] = [
+  CRETE,
   CHAPADA,
   PATAGONIA,
   FLORIPA,
