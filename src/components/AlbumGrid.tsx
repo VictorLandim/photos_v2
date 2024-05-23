@@ -25,6 +25,7 @@ const renderPhoto = ({ photo }, i) => {
   const src = `victorphotos/${albumSlug}/${photo.featuredImagePath}`;
   return (
     <Link
+      key={albumSlug}
       href={`/${albumSlug}`}
       className="group h-56 w-full rounded-xl border border-transparent lg:h-80 dark:border-gray-50/10"
       style={{
@@ -82,6 +83,7 @@ export const AlbumGrid = (props: AlbumGridProps) => {
           <TabList className="mb-6 flex gap-2">
             {["Gallery", "Map"].map((item) => (
               <Tab
+                key={item}
                 className="rounded-full px-5 py-2 text-base font-semibold text-gray-950 focus:outline-none
 
               data-[hover]:bg-gray-400/10

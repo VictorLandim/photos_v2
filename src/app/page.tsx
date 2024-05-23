@@ -20,7 +20,9 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
     return curr.count + prev;
   }, 0);
 
-  const countries = new Set(albumList.map((item) => item.country)).size;
+  const countries = new Set(
+    albumList.map((item) => item.country).filter(Boolean)
+  ).size;
 
   return (
     <div className="relative">
