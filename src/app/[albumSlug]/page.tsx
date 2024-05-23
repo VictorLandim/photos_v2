@@ -24,8 +24,6 @@ const AlbumDetailPage = async (props: PageProps) => {
 
   if (!meta?.name) return notFound();
 
-  const albumName = `${meta.altName}`;
-
   const { images } = await getProps({ albumSlug });
   const Header = () => {
     return (
@@ -42,8 +40,11 @@ const AlbumDetailPage = async (props: PageProps) => {
         <div className="mx-auto max-w-xs text-center lg:max-w-full">
           <p className="mb-2 text-base text-gray-500 dark:text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>
           <h1 className="mb-4 text-5xl font-bold text-gray-900 lg:text-7xl dark:text-white">
-            {albumName}
+            {meta.altName}
           </h1>
+          <p className="mb-4 inline-block rounded-full border border-gray-700 px-4 py-1 text-lg text-gray-700 lg:text-xl dark:border-gray-600 dark:text-white">
+            {meta.country}
+          </p>
           <p className="mx-auto max-w-lg text-lg text-gray-400">
             {meta.description}
           </p>
