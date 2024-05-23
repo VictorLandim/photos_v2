@@ -1,4 +1,4 @@
-import { AlbumGrid } from "@/components/AlbumGrid";
+import { AlbumGrid, Item } from "@/components/AlbumGrid";
 import { Container } from "@/components/Container";
 import { ShareButton } from "@/components/ShareButton";
 import { SunnyShotLink } from "@/components/SunnyShotLink";
@@ -14,83 +14,92 @@ import Image from "next/image";
 import heroImg from "../../public/assets/balos2.webp";
 import profile from "../../public/profile.jpeg";
 
-const Hero = () => (
-  <div className="relative">
-    <div className="relative h-[160px] w-full overflow-hidden rounded-none lg:h-[330px]">
-      <Image
-        unoptimized
-        alt="hero image"
-        className="absolute inset-0 object-cover object-[center_65%]"
-        src={heroImg.src}
-        fill
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
-      <div className="p-5">
-        <SunnyShotLink white />
-      </div>
-    </div>
-    <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
-      <div className="relative flex gap-6 lg:gap-8">
-        <div className="relative shrink-0">
-          <img
-            alt="avatar"
-            className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
-            src={profile.src}
-          />
-          <div className="absolute bottom-[55px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:bottom-[65px] lg:scale-100">
-            <SunIcon className="size-4" />
+const Hero = ({ albumList }: { albumList: Item[] }) => {
+  const albums = albumList.length;
+  const photos = albumList.reduce((prev, curr) => {
+    return curr.count + prev;
+  }, 0);
 
-            <span>pioneer</span>
-          </div>
+  const countries = new Set(albumList.map((item) => item.country)).size;
+
+  return (
+    <div className="relative">
+      <div className="relative h-[160px] w-full overflow-hidden rounded-none lg:h-[330px]">
+        <Image
+          unoptimized
+          alt="hero image"
+          className="absolute inset-0 object-cover object-[center_65%]"
+          src={heroImg.src}
+          fill
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
+        <div className="p-5">
+          <SunnyShotLink white />
         </div>
-        <div className="mt-8 flex flex-col lg:mt-14">
-          <div className="flex items-end">
-            <div className="flex items-center gap-2 lg:mb-1">
-              <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
-                Victor Lan
-              </h5>
-              <pre className="hidden text-base font-bold text-gray-800 lg:block lg:text-2xl dark:text-gray-400">
-                • @victor
-              </pre>
+      </div>
+      <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
+        <div className="relative flex gap-6 lg:gap-8">
+          <div className="relative shrink-0">
+            <img
+              alt="avatar"
+              className="size-24 rounded-full shadow-lg outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
+              src={profile.src}
+            />
+            <div className="absolute bottom-[55px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:bottom-[65px] lg:scale-100">
+              <SunIcon className="size-4" />
+
+              <span>pioneer</span>
             </div>
           </div>
-          <p className="mt-1 flex items-center gap-1 text-base text-gray-500 lg:text-xl dark:text-gray-400">
-            <MapPinIcon className="size-4" />
-            Cluj-Napoca
-          </p>
-          <div className="mt-6 flex items-center gap-4 lg:mt-10 lg:gap-5">
-            {[
-              ["9", "albums"],
-              ["321", "photos"],
-              ["6", "countries"],
-            ].map((item) => {
-              return (
-                <div className="flex flex-col gap-1 text-center">
-                  <span className="text-lg font-bold text-gray-900 lg:text-2xl dark:text-gray-50">
-                    {item[0]}
-                  </span>
-                  <span className="text-sm font-medium uppercase text-gray-500 lg:text-base">
-                    {item[1]}
-                  </span>
-                </div>
-              );
-            })}
+          <div className="mt-8 flex flex-col lg:mt-14">
+            <div className="flex items-end">
+              <div className="flex items-center gap-2 lg:mb-1">
+                <h5 className="text-2xl font-bold text-gray-950 lg:text-5xl dark:text-white">
+                  Victor Lan
+                </h5>
+                <pre className="hidden text-base font-bold text-gray-800 lg:block lg:text-2xl dark:text-gray-400">
+                  • @victor
+                </pre>
+              </div>
+            </div>
+            <p className="mt-1 flex items-center gap-1 text-base text-gray-500 lg:text-xl dark:text-gray-400">
+              <MapPinIcon className="size-4" />
+              Cluj-Napoca
+            </p>
+            <div className="mt-6 flex items-center gap-4 lg:mt-10 lg:gap-5">
+              {[
+                [albums, "albums"],
+                [photos, "photos"],
+                [countries, "countries"],
+              ].map((item) => {
+                return (
+                  <div className="flex flex-col gap-1 text-center">
+                    <span className="text-lg font-bold text-gray-900 lg:text-2xl dark:text-gray-50">
+                      {item[0]}
+                    </span>
+                    <span className="text-sm font-medium uppercase text-gray-500 lg:text-base">
+                      {item[1]}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="mt-8 flex gap-3 self-start lg:mt-14 lg:gap-4">
-        <ShareButton />
-      </div>
-    </Container>
-  </div>
-);
+        <div className="mt-8 flex gap-3 self-start lg:mt-14 lg:gap-4">
+          <ShareButton />
+        </div>
+      </Container>
+    </div>
+  );
+};
 
 const Albums = async () => {
   const { albumList } = await getProps();
 
   return (
     <div>
-      <Hero />
+      <Hero albumList={albumList} />
       <Container className="my-8 lg:my-12">
         <div className="h-[0.5px] bg-gray-300 dark:bg-neutral-700" />
       </Container>
