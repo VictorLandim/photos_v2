@@ -21,7 +21,7 @@ const renderPhoto = ({ photo }, i) => {
   const date = `${photo?.month} ${photo.year}`;
   const name = photo.altName;
   const imageBlurUrl = photo.featuredImageBlurUrl;
-  const size = 300;
+  const size = 500;
   const src = `victorphotos/${albumSlug}/${photo.featuredImagePath}`;
   return (
     <Link
