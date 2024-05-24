@@ -12,7 +12,7 @@ const AlbumHeading = () => {
   const { gridLayout, setLayout } = useGridLayout();
 
   return (
-    <div className="sticky top-0 z-50 mt-10 flex items-center justify-between border-b-[0.5px] border-gray-200 bg-gray-100 px-3 py-3 dark:border-gray-800 dark:bg-black">
+    <div className="sticky top-0 z-50 mt-2 flex items-center justify-between border-b-[0.5px] border-gray-200 bg-gray-100 px-3 py-3 dark:border-gray-800 dark:bg-black">
       <Link href="/" className="flex items-center gap-2">
         <img
           alt="avatar"
