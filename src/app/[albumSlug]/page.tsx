@@ -35,8 +35,6 @@ const AlbumDetailPage = async (props: PageProps) => {
     format,
   });
 
-  console.log({ blurDataURL });
-
   const { images } = await getProps({ albumSlug });
 
   const Header = () => {

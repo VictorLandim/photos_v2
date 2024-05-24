@@ -26,12 +26,13 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
 
   return (
     <div className="relative">
-      <div className="relative h-[160px] w-full overflow-hidden rounded-none lg:h-[330px]">
+      <div className="relative h-[150px] w-full overflow-hidden rounded-none lg:h-[320px]">
         <Image
           unoptimized
           alt="hero image"
           className="absolute inset-0 object-cover object-[center_65%]"
           src={heroImg.src}
+          blurDataURL={heroImg.blurDataURL}
           fill
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
