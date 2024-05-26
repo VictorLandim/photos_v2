@@ -41,7 +41,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
         </div>
       </div>
       <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
-        <div className="relative flex gap-6 lg:gap-8">
+        <div className="relative flex gap-6 text-white lg:gap-8">
           <div className="relative shrink-0">
             <img
               alt="avatar"

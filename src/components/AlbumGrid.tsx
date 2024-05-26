@@ -52,7 +52,7 @@ const renderPhoto = ({ photo }, i) => {
               {photo.country}
             </div>
           )}
-          <div className="flex items-center justify-center rounded-full border border-current bg-black/25 px-3 py-1 text-base font-semibold backdrop-blur-sm">
+          <div className="flex items-center justify-center rounded-full border border-current bg-black/25 px-3 py-1 text-base font-semibold text-white backdrop-blur-sm">
             {`${photo.count} photos`}
           </div>
         </div>
