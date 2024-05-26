@@ -51,7 +51,7 @@ const AlbumDetailPage = async (props: PageProps) => {
           width={size}
           height={size}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/75 backdrop-blur-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/65 backdrop-blur-0"></div>
         <div className="relative">
           <div className="mb-4 flex items-center justify-between p-2 lg:mb-8">
             <div className="flex items-center gap-1 text-sm font-bold text-gray-100 lg:text-base">
