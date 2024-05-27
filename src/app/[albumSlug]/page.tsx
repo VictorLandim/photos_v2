@@ -39,7 +39,7 @@ const AlbumDetailPage = async (props: PageProps) => {
 
   const Header = () => {
     return (
-      <header className="relative p-3">
+      <header className="relative h-[475px] lg:h-[450px]">
         <Image
           alt={meta.altName}
           className="absolute inset-0 h-full w-full object-cover"
@@ -52,31 +52,26 @@ const AlbumDetailPage = async (props: PageProps) => {
           height={size}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/50 backdrop-blur-0"></div>
-        <div className="relative">
-          <div className="mb-4 flex items-center justify-between p-2 lg:mb-8">
-            <div className="flex items-center gap-1 text-sm font-bold text-gray-100 lg:text-base">
-              <SunnyShotLink />
-              <div className="div">/</div>
-              <div className="font-bold">victor</div>
-            </div>
 
-            <div className="*:bg-transparent *:dark:bg-transparent">
-              <ShareButton />
-            </div>
-          </div>
-          <div className="mx-auto max-w-xs pb-24 pt-6 text-center lg:max-w-full">
-            <p className="mb-2 text-base text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>
-            <h1 className="mb-4 text-5xl font-bold text-white lg:text-7xl">
-              {meta.altName}
-            </h1>
+        <div className="relative flex h-full flex-col justify-center p-3">
+          <div className="mx-auto max-w-xs text-center lg:max-w-full">
+            <p className="mb-3 text-base text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>
+
             {meta.country && (
-              <p className="mb-4 inline-block rounded-full border border-gray-300 px-4 py-1 text-lg  font-semibold text-gray-100 lg:text-xl">
+              <p className="mb-1 inline-block rounded-full border border-gray-300 px-4 py-1 text-lg  font-semibold text-gray-100 lg:text-xl">
                 {meta.country}
               </p>
             )}
-            <p className="mx-auto max-w-lg text-lg text-gray-100">
+
+            <h1 className="mb-4 text-5xl font-bold text-white lg:text-7xl">
+              {meta.altName}
+            </h1>
+            <p className="mx-auto max-w-md text-lg text-gray-100">
               {meta.description}
             </p>
+            <div className="mt-3 flex justify-center">
+              <ShareButton />
+            </div>
           </div>
         </div>
       </header>
@@ -84,9 +79,12 @@ const AlbumDetailPage = async (props: PageProps) => {
   };
 
   return (
-    <div className="bg-gray-100 dark:bg-black">
+    <div className="relative bg-gray-100 dark:bg-black">
+      <div className="absolute inset-0">
+        <AlbumHeading />
+      </div>
       <Header />
-      <AlbumHeading />
+
       <div className="p-3">
         <Gallery photos={images} />
       </div>
