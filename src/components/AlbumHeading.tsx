@@ -49,8 +49,13 @@ const AlbumHeading = () => {
           }
         )}
       ></div>
-      <Link href="/" className="flex items-center gap-2">
-        <ChevronLeftIcon className="size-6 text-white" />
+      <Link
+        href="/"
+        className={cn("flex items-center gap-2 text-white dark:text-white", {
+          "text-gray-950": scrollProgress > 0.2,
+        })}
+      >
+        <ChevronLeftIcon className="size-6" />
         <Image
           unoptimized
           width={40}
@@ -59,8 +64,8 @@ const AlbumHeading = () => {
           className="size-8 rounded-full shadow-lg lg:size-8"
           src={profile.src}
         />
-        <div className="flex items-center dark:text-white">
-          <div className="text-base/none font-semibold text-gray-800 lg:text-lg/none dark:text-gray-100">
+        <div className="flex items-center">
+          <div className="text-base/none font-semibold lg:text-lg/none">
             Victor Lan
           </div>
         </div>
