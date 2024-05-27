@@ -58,7 +58,7 @@ export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
     >
       <TileLayer noWrap url={url} />
       {icons.map(({ icon, pos }) => (
-        <Marker icon={icon} position={pos as any} />
+        <Marker key={pos.toString()} icon={icon} position={pos as any} />
       ))}
     </MapContainer>
   );

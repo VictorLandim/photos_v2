@@ -34,6 +34,7 @@ const AlbumHeading = () => {
             layout === "single" ? RectangleStackIcon : Squares2X2Icon;
           return (
             <button
+              key={layout}
               onClick={() => {
                 if (gridLayout !== layout) setLayout(layout as any);
               }}

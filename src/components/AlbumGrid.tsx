@@ -6,7 +6,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 
 export type Item = AlbumMetadataItem & {
   featuredImageBlurUrl: string;
@@ -68,6 +68,7 @@ const renderPhoto = ({ photo }, i) => {
 };
 
 export const AlbumGrid = (props: AlbumGridProps) => {
+  const containerRef = useRef<HTMLUListElement>();
   const Map = useMemo(
     () =>
       dynamic(() => import("./AlbumsMap").then((mod) => mod.AlbumsMap), {
@@ -76,10 +77,14 @@ export const AlbumGrid = (props: AlbumGridProps) => {
     []
   );
 
+  const onTabChange = () => {
+    containerRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Container>
-      <ul className="mb-8">
-        <TabGroup defaultIndex={0}>
+      <ul className="mb-8 pt-6" ref={containerRef}>
+        <TabGroup defaultIndex={0} onChange={onTabChange}>
           <TabList className="mb-6 flex gap-2">
             {["Gallery", "Map"].map((item) => (
               <Tab

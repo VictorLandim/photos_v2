@@ -103,7 +103,7 @@ const Albums = async () => {
   return (
     <div>
       <Hero albumList={albumList} />
-      <Container className="my-8 mb-6 lg:mt-8">
+      <Container className="mt-8">
         <div className="h-[0.5px] bg-gray-300 dark:bg-neutral-800" />
       </Container>
       <AlbumGrid albumList={albumList} />
