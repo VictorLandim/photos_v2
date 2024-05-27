@@ -31,6 +31,9 @@ const AlbumHeading = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const hasScrolled = scrollProgress > 0.2;
+
   return (
     <div
       ref={ref}
@@ -45,14 +48,14 @@ const AlbumHeading = () => {
         className={cn(
           "absolute inset-0 -z-10 bg-white opacity-0 transition-all duration-300 dark:bg-black",
           {
-            "opacity-100": scrollProgress > 0.2,
+            "opacity-100": hasScrolled,
           }
         )}
       ></div>
       <Link
         href="/"
         className={cn("flex items-center gap-2 text-white dark:text-white", {
-          "text-gray-950": scrollProgress > 0.2,
+          "text-gray-950": hasScrolled,
         })}
       >
         <ChevronLeftIcon className="size-6" />

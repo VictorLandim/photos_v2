@@ -69,7 +69,7 @@ const AlbumDetailPage = async (props: PageProps) => {
             <p className="mx-auto max-w-md text-lg text-gray-100">
               {meta.description}
             </p>
-            <div className="mt-3 flex justify-center">
+            <div className="mt-3 flex justify-center *:bg-transparent *:text-white *:hover:text-gray-600">
               <ShareButton />
             </div>
           </div>
