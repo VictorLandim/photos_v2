@@ -42,10 +42,12 @@ const AlbumHeading = () => {
       )}
     >
       <div
-        className="absolute inset-0 -z-10 bg-white dark:bg-black"
-        style={{
-          opacity: scrollProgress,
-        }}
+        className={cn(
+          "absolute inset-0 -z-10 bg-white opacity-0 transition-all duration-300 dark:bg-black",
+          {
+            "opacity-100": scrollProgress > 0.2,
+          }
+        )}
       ></div>
       <Link href="/" className="flex items-center gap-2">
         <ChevronLeftIcon className="size-6 text-white" />
@@ -57,13 +59,10 @@ const AlbumHeading = () => {
           className="size-8 rounded-full shadow-lg lg:size-8"
           src={profile.src}
         />
-        <div className="flex flex-col dark:text-white">
+        <div className="flex items-center dark:text-white">
           <div className="text-base/none font-semibold text-gray-800 lg:text-lg/none dark:text-gray-100">
             Victor Lan
           </div>
-          {/* <div className="text-sm font-medium text-gray-500 dark:text-gray-200">
-            @victor
-          </div> */}
         </div>
       </Link>
       <div className="flex items-center gap-2">

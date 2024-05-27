@@ -54,8 +54,8 @@ const AlbumDetailPage = async (props: PageProps) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/50 backdrop-blur-0"></div>
 
         <div className="relative flex h-full flex-col justify-center p-3">
-          <div className="mx-auto max-w-xs text-center lg:max-w-full">
-            <p className="mb-3 text-base text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>
+          <div className="mx-auto max-w-xs text-center lg:mx-0 lg:max-w-full">
+            <p className="mb-3 text-base text-gray-200">{`${meta.month} ${meta.year} • ${images.length} photos`}</p>
 
             {meta.country && (
               <p className="mb-1 inline-block rounded-full border border-gray-300 px-3 py-0.5 text-base  font-semibold text-gray-100 lg:text-base">
