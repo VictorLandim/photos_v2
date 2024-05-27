@@ -224,9 +224,9 @@ const BUENOS_AIRES: AlbumMetadataItem = {
 };
 
 const albumMetadata: AlbumMetadataItem[] = [
+  PATAGONIA,
   CRETE,
   CHAPADA,
-  PATAGONIA,
   FLORIPA,
   SUCEAVA,
   NEA_KAMENI,

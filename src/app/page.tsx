@@ -26,7 +26,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
 
   return (
     <div className="relative">
-      <div className="relative h-[125px] w-full overflow-hidden rounded-none lg:h-[250px]">
+      <div className="relative h-[150px] w-full overflow-hidden rounded-none lg:h-[320px]">
         <Image
           unoptimized
           alt="hero image"
