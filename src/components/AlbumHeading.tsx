@@ -51,19 +51,10 @@ const AlbumHeading = () => {
         <ChevronLeftIcon className="size-6 text-white" />
         <Image
           unoptimized
-          width={32}
-          height={32}
-          src={logoWhite}
-          alt="sunnyshot logo"
-          className="size-8"
-        />
-        <div className="px-1 text-lg font-semibold text-white">/</div>
-        <Image
-          unoptimized
           width={40}
           height={40}
           alt="avatar"
-          className="size-10 rounded-full shadow-lg lg:size-8"
+          className="size-8 rounded-full shadow-lg lg:size-8"
           src={profile.src}
         />
         <div className="flex flex-col dark:text-white">

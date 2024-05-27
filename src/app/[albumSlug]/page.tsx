@@ -39,7 +39,7 @@ const AlbumDetailPage = async (props: PageProps) => {
 
   const Header = () => {
     return (
-      <header className="relative h-[475px] lg:h-[450px]">
+      <header className="relative h-[475px] pt-8 lg:h-[450px] lg:pt-0">
         <Image
           alt={meta.altName}
           className="absolute inset-0 h-full w-full object-cover"
@@ -58,7 +58,7 @@ const AlbumDetailPage = async (props: PageProps) => {
             <p className="mb-3 text-base text-gray-200">{`${meta.month} ${meta.year} - ${images.length} photos`}</p>
 
             {meta.country && (
-              <p className="mb-1 inline-block rounded-full border border-gray-300 px-4 py-1 text-lg  font-semibold text-gray-100 lg:text-xl">
+              <p className="mb-1 inline-block rounded-full border border-gray-300 px-3 py-0.5 text-base  font-semibold text-gray-100 lg:text-base">
                 {meta.country}
               </p>
             )}
