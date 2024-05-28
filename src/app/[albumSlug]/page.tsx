@@ -1,7 +1,3 @@
-import AlbumHeading from "@/components/AlbumHeading";
-import Gallery from "@/components/Gallery";
-import { ShareButton } from "@/components/ShareButton";
-import { SunnyShotLink } from "@/components/SunnyShotLink";
 import albumMetadata from "@/utils/albumMetadata";
 import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import { getAlbumDisplayName } from "@/utils/getAlbumDisplayName";
@@ -11,8 +7,8 @@ import { getImageUrl } from "@/utils/getImageUrl";
 import imagesToGalleryImages from "@/utils/imagesToGalleryImages";
 import meta from "@/utils/meta";
 import { Metadata, ResolvingMetadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Content } from "./content";
 
 type PageProps = {
   params: {
@@ -26,70 +22,17 @@ const AlbumDetailPage = async (props: PageProps) => {
 
   if (!meta?.name) return notFound();
 
-  const size = 1000;
-  const src = `victorphotos/${albumSlug}/${meta.featuredImagePath}`;
+  const { images } = await getProps({ albumSlug });
 
+  const src = `victorphotos/${meta.name}/${meta.featuredImagePath}`;
   const [public_id, format] = src.split(".");
+
   const blurDataURL = await getBase64ImageUrl({
     public_id,
     format,
   });
 
-  const { images } = await getProps({ albumSlug });
-
-  const Header = () => {
-    return (
-      <header className="relative h-[475px] pt-8 lg:h-[450px] lg:pt-0">
-        <Image
-          alt={meta.altName}
-          className="absolute inset-0 h-full w-full object-cover"
-          title={meta.altName}
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          src={src}
-          loading="eager"
-          width={size}
-          height={size}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/50 backdrop-blur-0"></div>
-
-        <div className="relative flex h-full flex-col justify-center p-3">
-          <div className="mx-auto max-w-xs text-center lg:mx-0 lg:max-w-full">
-            <p className="mb-3 text-base text-gray-200">{`${meta.month} ${meta.year} • ${images.length} photos`}</p>
-
-            {meta.country && (
-              <p className="mb-1 inline-block rounded-full border border-gray-300 px-3 py-0.5 text-base  font-semibold text-gray-100 lg:text-base">
-                {meta.country}
-              </p>
-            )}
-
-            <h1 className="mb-4 text-5xl font-bold text-white lg:text-7xl">
-              {meta.altName}
-            </h1>
-            <p className="mx-auto max-w-md text-lg text-gray-100">
-              {meta.description}
-            </p>
-            <div className="mt-3 inline-flex justify-center *:bg-transparent *:text-white *:hover:text-gray-600">
-              <ShareButton />
-            </div>
-          </div>
-        </div>
-      </header>
-    );
-  };
-
-  return (
-    <div className="relative bg-gray-100 dark:bg-black">
-      <div className="absolute inset-0">
-        <AlbumHeading />
-      </div>
-      <Header />
-
-      <div className="p-3">
-        <Gallery photos={images} />
-      </div>
-    </div>
-  );
+  return <Content images={images} meta={meta} blurDataURL={blurDataURL} />;
 };
 
 export default AlbumDetailPage;
