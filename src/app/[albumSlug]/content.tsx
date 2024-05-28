@@ -14,16 +14,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import profileImg from "../../../public/profile.jpeg";
 
-const StickyNav = ({ isIntersecting }: { isIntersecting: boolean }) => {
+const StickyNav = () => {
   const { gridLayout, setLayout } = useGridLayout();
   return (
     <div
       className={cn(
-        "sticky top-1 z-50 mx-1 -mt-[60px] mb-2 flex h-[50px] items-center justify-between gap-2 rounded-lg border border-black/10 bg-black/60 px-4 backdrop-blur-md transition-all duration-200 lg:mx-4 lg:-mt-[68px] lg:h-[60px]",
-        {
-          "border-transparent bg-transparent backdrop-blur-none":
-            isIntersecting,
-        }
+        "sticky top-0 z-50 -mt-[50px] mb-2 flex h-[50px] items-center justify-between gap-2 bg-black/80 px-4 backdrop-blur-md transition-all duration-200 lg:-mt-[60px] lg:h-[60px]"
       )}
     >
       <div className="flex items-center justify-center gap-2 text-gray-100">
@@ -80,7 +76,7 @@ export const Content = ({
 
   const Header = () => {
     return (
-      <header className="relative py-24 lg:pb-32 lg:pt-24">
+      <header className="relative pb-36 pt-28 lg:pb-44 lg:pt-28">
         <AlbumHeading />
 
         <Image
@@ -145,7 +141,7 @@ export const Content = ({
       <div ref={ref}>
         <Header />
       </div>
-      <StickyNav isIntersecting={isIntersecting} />
+      <StickyNav />
 
       <div className="p-3">
         <Gallery photos={images} />
