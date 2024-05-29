@@ -12,7 +12,7 @@ type GalleryProps = {
 const Gallery = ({ photos }: GalleryProps) => {
   const { gridLayout } = useGridLayout();
 
-  const targetRowHeight = gridLayout === "multiple" ? 200 : 500;
+  const targetRowHeight = gridLayout === "multiple" ? 150 : 500;
   const spacing = gridLayout === "multiple" ? 8 : 12;
 
   return (
