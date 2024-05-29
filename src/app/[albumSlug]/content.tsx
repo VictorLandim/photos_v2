@@ -19,7 +19,7 @@ const StickyNav = () => {
   return (
     <div
       className={cn(
-        "sticky top-0 z-50 -mt-[50px] mb-2 flex h-[50px] items-center justify-between gap-2 bg-black/80 px-4 backdrop-blur-md transition-all duration-200 lg:-mt-[60px] lg:h-[60px]"
+        "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 border-b-[0.5px] border-gray-800 bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
       )}
     >
       <div className="flex items-center justify-center gap-2 text-gray-100">
@@ -76,7 +76,7 @@ export const Content = ({
 
   const Header = () => {
     return (
-      <header className="relative pb-36 pt-28 lg:pb-44 lg:pt-28">
+      <header className="relative p-28 lg:p-32">
         <AlbumHeading />
 
         <Image
@@ -90,7 +90,7 @@ export const Content = ({
           width={size}
           height={size}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/50 backdrop-blur-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/50"></div>
 
         <div className="relative mx-4 flex h-full flex-col justify-center lg:mx-0">
           <div className="mx-auto max-w-xs text-center lg:mx-0 lg:max-w-full">
