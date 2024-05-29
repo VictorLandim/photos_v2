@@ -53,10 +53,10 @@ export const Content = ({
     return (
       <div
         className={cn(
-          "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
+          "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 overflow-hidden bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
         )}
       >
-        <div className="flex items-center justify-center gap-4 text-gray-100">
+        <div className="flex items-center justify-center gap-2 text-gray-100">
           <Image
             unoptimized
             width={40}
@@ -65,23 +65,32 @@ export const Content = ({
             className="size-8 rounded-full shadow-lg"
             src={profileImg.src}
           />
-          <div className="flex flex-col items-start gap-1">
-            <div className="text-nowrap text-base/none font-semibold lg:text-lg/none">
-              Victor Lan
-            </div>
-            <div className="text-xs/none">{`${meta.month} ${meta.year}`}</div>
-          </div>
           <div
             className={cn(
-              "flex flex-1 transform items-center gap-4 text-lg/6 font-semibold transition-all duration-200 lg:text-xl",
+              "absolute left-[60px] top-1/2 text-nowrap text-lg font-semibold transition-all duration-300",
               {
-                "-translate-y-full opacity-0": isIntersecting,
-                "translate-y-0 opacity-100": !isIntersecting,
+                "translate-y-full opacity-0": !isIntersecting,
+                "-translate-y-1/2 opacity-100": isIntersecting,
               }
             )}
           >
-            <span className="text-gray-300"> • </span>
-            <div className="">{meta.altName}</div>
+            Victor Lan
+          </div>
+          <div
+            className={cn(
+              "absolute left-[60px] top-1/2 flex flex-col items-start gap-0.5 transition-all duration-300",
+              {
+                "-translate-y-full opacity-0": isIntersecting,
+                "-translate-y-1/2 opacity-100": !isIntersecting,
+              }
+            )}
+          >
+            <div className="text-nowrap text-sm font-medium leading-none lg:text-base">
+              Victor Lan
+            </div>
+            <div className="flex flex-1 transform items-center gap-4 text-lg/6 font-semibold lg:text-xl">
+              {meta.altName}
+            </div>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -139,7 +148,7 @@ export const Content = ({
               </p>
             )}
 
-            <h1 className="mb-4 text-5xl font-bold text-white lg:text-7xl">
+            <h1 className="mb-4 text-5xl font-bold leading-tight text-white lg:text-7xl">
               {meta.altName}
             </h1>
             <p className="mx-auto max-w-md text-lg text-gray-100">
