@@ -29,7 +29,7 @@ export const Content = ({
   const src = `victorphotos/${meta.name}/${meta.featuredImagePath}`;
 
   const { gridLayout, setLayout } = useGridLayout();
-  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [isIntersecting, setIsIntersecting] = useState(true);
   const ref = useRef<HTMLDivElement>();
 
   useEffect(() => {
