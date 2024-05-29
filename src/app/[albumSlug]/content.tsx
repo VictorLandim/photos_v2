@@ -14,6 +14,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import profileImg from "../../../public/profile.jpeg";
 
+const NAV_HEIGHT = 60;
+
 export const Content = ({
   images,
   meta,
@@ -37,7 +39,7 @@ export const Content = ({
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);
       },
-      { threshold: 0, rootMargin: "10px" }
+      { threshold: 0, rootMargin: `-${NAV_HEIGHT}px` }
     );
 
     observer.observe(ref.current);
@@ -53,8 +55,15 @@ export const Content = ({
     return (
       <div
         className={cn(
-          "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 overflow-hidden bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
+          "sticky top-0 z-50 flex items-center justify-between gap-2 overflow-hidden px-4 transition-all duration-200",
+          {
+            "bg-black/80 backdrop-blur-md": !isIntersecting,
+          }
         )}
+        style={{
+          height: NAV_HEIGHT,
+          marginTop: -NAV_HEIGHT,
+        }}
       >
         <div className="flex items-center justify-center gap-2 text-gray-100">
           <Image
@@ -165,7 +174,7 @@ export const Content = ({
       <div ref={ref}>{renderHeader()}</div>
 
       {renderStickyNav()}
-      <div className="p-3 pt-0">
+      <div className="p-3">
         <Gallery photos={images} />
       </div>
     </div>
