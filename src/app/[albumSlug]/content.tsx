@@ -14,54 +14,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import profileImg from "../../../public/profile.jpeg";
 
-const StickyNav = () => {
-  const { gridLayout, setLayout } = useGridLayout();
-  return (
-    <div
-      className={cn(
-        "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
-      )}
-    >
-      <div className="flex items-center justify-center gap-2 text-gray-100">
-        <Image
-          unoptimized
-          width={40}
-          height={40}
-          alt="avatar"
-          className="size-8 rounded-full shadow-lg"
-          src={profileImg.src}
-        />
-        <div className="flex items-center">
-          <div className="text-base font-semibold lg:text-lg">Victor Lan</div>
-        </div>
-      </div>
-      <div className="flex items-center gap-2">
-        {["single", "multiple"].map((layout) => {
-          const Icon =
-            layout === "single" ? RectangleStackIcon : Squares2X2Icon;
-          return (
-            <button
-              key={layout}
-              onClick={() => {
-                if (gridLayout !== layout) setLayout(layout as any);
-              }}
-              className={cn(
-                "flex appearance-none items-center gap-1 text-base text-gray-500 transition-all dark:text-gray-300",
-                {
-                  "text-gray-500 dark:text-gray-300": gridLayout === layout,
-                  "text-gray-300 dark:text-gray-500": gridLayout !== layout,
-                }
-              )}
-            >
-              <Icon className="size-6" />
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
 export const Content = ({
   images,
   meta,
@@ -74,9 +26,94 @@ export const Content = ({
   const size = 1000;
   const src = `victorphotos/${meta.name}/${meta.featuredImagePath}`;
 
-  const Header = () => {
+  const { gridLayout, setLayout } = useGridLayout();
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef<HTMLDivElement>();
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: "10px" }
+    );
+
+    observer.observe(ref.current);
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+        observer.disconnect();
+      }
+    };
+  }, [ref]);
+
+  const renderStickyNav = () => {
     return (
-      <header className="relative p-28 lg:p-32">
+      <div
+        className={cn(
+          "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
+        )}
+      >
+        <div className="flex items-center justify-center gap-4 text-gray-100">
+          <Image
+            unoptimized
+            width={40}
+            height={40}
+            alt="avatar"
+            className="size-8 rounded-full shadow-lg"
+            src={profileImg.src}
+          />
+          <div className="flex flex-col items-start gap-1">
+            <div className="text-nowrap text-base/none font-semibold lg:text-lg/none">
+              Victor Lan
+            </div>
+            <div className="text-xs/none">{`${meta.month} ${meta.year}`}</div>
+          </div>
+          <div
+            className={cn(
+              "flex flex-1 transform items-center gap-4 text-lg/6 font-semibold transition-all duration-200 lg:text-xl",
+              {
+                "-translate-y-full opacity-0": isIntersecting,
+                "translate-y-0 opacity-100": !isIntersecting,
+              }
+            )}
+          >
+            <span className="text-gray-300"> • </span>
+            <div className="">{meta.altName}</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          {["single", "multiple"].map((layout) => {
+            const Icon =
+              layout === "single" ? RectangleStackIcon : Squares2X2Icon;
+            return (
+              <button
+                key={layout}
+                onClick={() => {
+                  if (gridLayout !== layout) setLayout(layout as any);
+                }}
+                className={cn(
+                  "flex appearance-none items-center gap-1 text-base text-gray-500 transition-all dark:text-gray-300",
+                  {
+                    "text-gray-500 dark:text-gray-300": gridLayout === layout,
+                    "text-gray-300 dark:text-gray-500": gridLayout !== layout,
+                  }
+                )}
+              >
+                <Icon className="size-6" />
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
+  const renderHeader = () => {
+    return (
+      <header className="relative py-28 lg:py-32">
         <AlbumHeading />
 
         <Image
@@ -92,7 +129,7 @@ export const Content = ({
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/50"></div>
 
-        <div className="relative mx-4 flex h-full flex-col justify-center lg:mx-0">
+        <div className="relative flex h-full w-full flex-col justify-center">
           <div className="mx-auto max-w-xs text-center lg:mx-0 lg:max-w-full">
             <p className="mb-3 text-base text-gray-200">{`${meta.month} ${meta.year} • ${images.length} photos`}</p>
 
@@ -114,35 +151,11 @@ export const Content = ({
     );
   };
 
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const ref = useRef<HTMLDivElement>();
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsIntersecting(entry.isIntersecting);
-      },
-      { threshold: 0, rootMargin: "-70px" }
-    );
-
-    observer.observe(ref.current);
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-        observer.disconnect();
-      }
-    };
-  }, [ref]);
-
   return (
     <div className="">
-      <div ref={ref}>
-        <Header />
-      </div>
-      <StickyNav />
+      <div ref={ref}>{renderHeader()}</div>
 
+      {renderStickyNav()}
       <div className="p-3 pt-0">
         <Gallery photos={images} />
       </div>
