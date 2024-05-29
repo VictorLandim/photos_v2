@@ -19,7 +19,7 @@ const StickyNav = () => {
   return (
     <div
       className={cn(
-        "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 border-b-[0.5px] border-gray-800 bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
+        "sticky top-0 z-50 flex h-[60px] items-center justify-between gap-2 bg-black/80 px-4 backdrop-blur-md transition-all duration-200"
       )}
     >
       <div className="flex items-center justify-center gap-2 text-gray-100">
@@ -143,7 +143,7 @@ export const Content = ({
       </div>
       <StickyNav />
 
-      <div className="p-3">
+      <div className="p-3 pt-0">
         <Gallery photos={images} />
       </div>
     </div>
