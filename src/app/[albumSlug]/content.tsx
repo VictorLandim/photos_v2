@@ -78,17 +78,17 @@ export const Content = ({
           </div>
           <div
             className={cn(
-              "absolute left-[60px] top-1/2 flex flex-col items-start gap-0.5 transition-all duration-300",
+              "absolute left-[60px] top-1/2 flex flex-col items-start gap-1 transition-all duration-300",
               {
                 "-translate-y-full opacity-0": isIntersecting,
                 "-translate-y-1/2 opacity-100": !isIntersecting,
               }
             )}
           >
-            <div className="text-nowrap text-sm font-medium leading-none lg:text-base">
+            <div className="text-nowrap text-sm font-medium !leading-none text-gray-300">
               Victor Lan
             </div>
-            <div className="flex flex-1 transform items-center gap-4 text-lg/6 font-semibold lg:text-xl">
+            <div className="flex flex-1 transform items-center gap-4 text-lg font-semibold !leading-none lg:text-xl">
               {meta.altName}
             </div>
           </div>
