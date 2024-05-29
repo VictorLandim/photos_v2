@@ -113,7 +113,7 @@ export const Content = ({
                   if (gridLayout !== layout) setLayout(layout as any);
                 }}
                 className={cn(
-                  "flex appearance-none items-center gap-1 text-base text-gray-500 transition-all dark:text-gray-300",
+                  "flex appearance-none items-center gap-1 text-base transition-all",
                   {
                     "text-gray-500 dark:text-gray-300": gridLayout === layout,
                     "text-gray-300 dark:text-gray-500": gridLayout !== layout,
@@ -145,7 +145,7 @@ export const Content = ({
           width={size}
           height={size}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/75"></div>
 
         <div className="relative flex h-full w-full flex-col justify-center">
           <div className="mx-auto max-w-xs text-center lg:mx-0 lg:max-w-full">
@@ -174,7 +174,7 @@ export const Content = ({
       <div ref={ref}>{renderHeader()}</div>
 
       {renderStickyNav()}
-      <div className="p-3">
+      <div className="p-2">
         <Gallery photos={images} />
       </div>
     </div>
