@@ -26,7 +26,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
 
   return (
     <div className="relative">
-      <div className="relative h-[150px] w-full overflow-hidden rounded-none lg:h-[320px]">
+      <div className="relative h-[150px] w-full overflow-hidden rounded-none lg:h-[250px]">
         <Image
           unoptimized
           alt="hero image"
@@ -48,7 +48,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
               className="size-24 rounded-full outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
               src={profile.src}
             />
-            <div className="absolute bottom-[40px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-xs font-medium uppercase shadow-lg lg:bottom-[35px] lg:scale-100">
+            <div className="absolute bottom-[35px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-sm font-medium uppercase shadow-lg lg:bottom-[30px] lg:scale-100">
               <SunIcon className="size-4" />
 
               <span>pioneer</span>
