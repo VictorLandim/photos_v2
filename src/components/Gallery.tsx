@@ -13,7 +13,6 @@ const Gallery = ({ photos }: GalleryProps) => {
   const { gridLayout } = useGridLayout();
 
   const targetRowHeight = gridLayout === "multiple" ? 150 : 500;
-  const spacing = gridLayout === "multiple" ? 8 : 12;
 
   return (
     <PhotoswipeGallery
@@ -29,7 +28,7 @@ const Gallery = ({ photos }: GalleryProps) => {
         layout="rows"
         photos={photos}
         renderPhoto={renderPhoto}
-        spacing={spacing}
+        spacing={8}
         padding={0}
         targetRowHeight={targetRowHeight}
       />
