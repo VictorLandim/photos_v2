@@ -43,7 +43,7 @@ const SALVADOR: AlbumMetadataItem = {
   month: "May",
   year: "2021",
   isFilm: false,
-  description: "Salvador - Brazil. Fuji Xtra 400",
+  description: "Salvador shot on Fuji Xtra 400",
   featuredImagePath: "b_10.jpg",
   count: 65,
   pos: [-12.974722, -38.476665],
@@ -55,7 +55,7 @@ const CHAPADA: AlbumMetadataItem = {
   month: "May",
   year: "2024",
   isFilm: false,
-  description: "Chapada dos Veadeiros - Brazil. Ricoh GRIIIx",
+  description: "Chapada dos Veadeiros. Ricoh GRIIIx",
   featuredImagePath: "R0006805.JPG",
   count: 40,
   pos: [-14.1336, -47.5215],
@@ -69,8 +69,7 @@ const FLORIPA: AlbumMetadataItem = {
   year: "2023",
   isFilm: true,
   description: `
-    Florianópolis - Brazil during New Years
-    Fuji Superia X-Tra 400.
+    Florianópolis during New Years. Fuji Superia X-Tra 400.
   `,
   featuredImagePath: "34.jpg",
   count: 22,
@@ -85,8 +84,7 @@ const SANTA_MARTA: AlbumMetadataItem = {
   year: "2023",
   isFilm: true,
   description: `
-    Santa Marta - Colombia
-    Fuji Superia X-Tra 400.
+    Santa Marta. Fuji Superia X-Tra 400.
   `,
   featuredImagePath: "1.jpg",
   count: 17,
@@ -101,8 +99,7 @@ const PATAGONIA: AlbumMetadataItem = {
   year: "2023",
   isFilm: true,
   description: `
-    El Calafate, El Chaltén - Argentina
-    Kodak Vision 250D, Kodak Portra 400.
+    El Calafate, El Chaltén. Kodak Vision 250D, Kodak Portra 400.
   `,
   featuredImagePath: "13.jpg",
   count: 18,
@@ -117,8 +114,7 @@ const MENDOZA: AlbumMetadataItem = {
   year: "2023",
   isFilm: true,
   description: `
-    Mendoza - Argentina, Maragogi, Alto Paraíso - Brazil
-    Kodak Vision 250D, Kodak Portra 400.
+    Mendoza, Maragogi, Alto Paraíso. Kodak Vision 250D, Kodak Portra 400.
   `,
   featuredImagePath: "6.jpg",
   count: 15,
@@ -132,8 +128,7 @@ const NEA_KAMENI: AlbumMetadataItem = {
   year: "2023",
   isFilm: false,
   description: `
-      Nea Kameni Volcano, Santorini - Greece
-      Fuji XE2 - Velvia.
+      Nea Kameni Volcano, Santorini. Fuji XE2 - Velvia.
     `,
   featuredImagePath: "5.jpg",
   count: 29,
@@ -148,8 +143,7 @@ const ANCIENT_THERA: AlbumMetadataItem = {
   year: "2023",
   isFilm: false,
   description: `
-    Ancient Thera, Santorini - Greece
-    Fuji XE2 - Velvia.
+    Ancient Thera, Santorini. Fuji XE2 - Velvia.
   `,
   featuredImagePath: "2.jpg",
   count: 35,
@@ -164,8 +158,7 @@ const BARCELONA: AlbumMetadataItem = {
   year: "2023",
   isFilm: false,
   description: `
-    Barcelona - Spain
-    Ricoh GR IIIx.
+    Barcelona. Ricoh GR IIIx.
   `,
   featuredImagePath: "8.jpg",
   count: 18,
@@ -175,13 +168,12 @@ const BARCELONA: AlbumMetadataItem = {
 const LONDON: AlbumMetadataItem = {
   name: "london",
   country: "🇬🇧 United Kingdom",
-  altName: "🇬🇧 First time in London",
+  altName: "🕰️ First time in London",
   month: "October",
   year: "2023",
   isFilm: false,
   description: `
-    London - England
-    Ricoh GR IIIx.
+    London. Ricoh GR IIIx.
   `,
   featuredImagePath: "18.jpg",
   count: 34,
@@ -191,13 +183,12 @@ const LONDON: AlbumMetadataItem = {
 const SUCEAVA: AlbumMetadataItem = {
   name: "suceava",
   country: "🇷🇴 Romania",
-  altName: "🇷🇴 Bukovina hike",
+  altName: "🗻 Bukovina hike",
   month: "October",
   year: "2023",
   isFilm: false,
   description: `
-    Suceava - Romania
-    Ricoh GR IIIx.
+    12 apostoli trail. Ricoh GR IIIx.
   `,
   featuredImagePath: "8.JPG",
   count: 40,
@@ -212,8 +203,7 @@ const FUNGI: AlbumMetadataItem = {
   year: "2023",
   isFilm: false,
   description: `
-    Mushrooms found in Romania
-    Ricoh GR IIIx.
+    Mushrooms found in Romania. Ricoh GR IIIx.
   `,
   featuredImagePath: "R0001103.JPG",
   count: 51,
@@ -227,8 +217,7 @@ const BUENOS_AIRES: AlbumMetadataItem = {
   year: "2022",
   isFilm: false,
   description: `
-    Buenos Aires - Argentina
-    Fujifilm X-E2.
+    Buenos Aires. Fujifilm X-E2.
   `,
   featuredImagePath: "52.jpg",
   count: 39,
