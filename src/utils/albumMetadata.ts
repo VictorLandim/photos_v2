@@ -246,4 +246,4 @@ export default albumMetadata;
 
 export const albumNames = albumMetadata.map((album) => album.name);
 
-export const FEATURED_ALBUM = "london";
+export const FEATURED_ALBUM = "patagonia";
