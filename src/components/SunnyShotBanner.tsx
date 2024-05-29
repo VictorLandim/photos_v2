@@ -2,7 +2,7 @@ import { SunnyShotLink } from "./SunnyShotLink";
 
 export const SunnyShotBanner = () => {
   return (
-    <div className="mt-auto flex h-24 w-full items-center justify-between border-t border-gray-200 bg-gray-100 px-4 backdrop-blur-sm lg:px-8 dark:border-neutral-800 dark:bg-black">
+    <div className="mt-auto flex h-24 w-full items-center justify-between border-t border-gray-200 bg-gray-100 px-4 lg:px-8 dark:border-neutral-800 dark:bg-black">
       <div className="dark:hidden">
         <SunnyShotLink />
       </div>

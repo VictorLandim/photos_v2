@@ -57,7 +57,7 @@ export const Content = ({
         className={cn(
           "sticky top-0 z-50 flex items-center justify-between gap-2 overflow-hidden px-4 transition-all duration-200",
           {
-            "bg-black/80 backdrop-blur-md": !isIntersecting,
+            "bg-black/95": !isIntersecting,
           }
         )}
         style={{
