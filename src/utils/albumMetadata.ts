@@ -11,6 +11,18 @@ export type AlbumMetadataItem = {
   pos?: [number, number];
 };
 
+const AMSTERDAM: AlbumMetadataItem = {
+  name: "amsterdam",
+  altName: "🌷 Exploring Holland",
+  month: "March",
+  year: "2024",
+  isFilm: false,
+  description: "Amsterdam. Ricoh GR IIIx",
+  count: 56,
+  featuredImagePath: "R0005842.JPG",
+  country: "🇳🇱 The Netherlands",
+  pos: [52.377956, 4.89707],
+};
 const CRETE: AlbumMetadataItem = {
   name: "crete",
   altName: "🏝️ Crete Island",
@@ -226,6 +238,7 @@ const BUENOS_AIRES: AlbumMetadataItem = {
 const albumMetadata: AlbumMetadataItem[] = [
   PATAGONIA,
   CRETE,
+  AMSTERDAM,
   CHAPADA,
   FLORIPA,
   SUCEAVA,
