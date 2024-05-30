@@ -55,9 +55,9 @@ export const Content = ({
     return (
       <div
         className={cn(
-          "sticky top-0 z-50 flex items-center justify-between gap-2 overflow-hidden px-4 transition-all duration-200",
+          "relative top-0 z-50 flex items-center justify-between gap-2 overflow-hidden px-4 transition-all duration-200",
           {
-            "bg-black/95": !isIntersecting,
+            "sticky bg-black/95": !isIntersecting,
           }
         )}
         style={{
