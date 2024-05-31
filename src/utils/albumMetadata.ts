@@ -153,7 +153,7 @@ const ANCIENT_THERA: AlbumMetadataItem = {
 const BARCELONA: AlbumMetadataItem = {
   name: "barcelona",
   country: "🇪🇸 Spain",
-  altName: "🇪🇸 Barcelona summer",
+  altName: "☀️ Barcelona summer",
   month: "August",
   year: "2023",
   isFilm: false,

@@ -146,7 +146,7 @@ export const Content = ({
           width={size}
           height={size}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/75"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/75"></div>
 
         <div className="relative flex h-full w-full flex-col justify-center">
           <div className="mx-auto max-w-xs text-center lg:mx-0 lg:max-w-full">
