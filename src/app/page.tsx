@@ -45,10 +45,14 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
       <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
         <div className="relative flex gap-6 text-white lg:gap-8">
           <div className="relative shrink-0">
-            <img
+            <Image
+              unoptimized
               alt="avatar"
+              placeholder="blur"
+              width={96}
+              height={96}
               className="size-24 rounded-full outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
-              src={profile.src}
+              src={profile}
             />
             <div className="absolute bottom-[35px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-sm font-medium uppercase shadow-lg lg:bottom-[30px] lg:scale-100">
               <SunIcon className="size-4" />

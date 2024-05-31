@@ -68,11 +68,12 @@ export const Content = ({
         <div className="flex items-center justify-center gap-2 text-gray-100">
           <Image
             unoptimized
+            placeholder="blur"
             width={40}
             height={40}
             alt="avatar"
             className="size-8 rounded-full shadow-lg"
-            src={profileImg.src}
+            src={profileImg}
           />
           <div
             className={cn(
