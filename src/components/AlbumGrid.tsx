@@ -41,7 +41,7 @@ const renderPhoto = ({ photo }, i) => {
           blurDataURL={imageBlurUrl}
           title={name}
           src={src}
-          loading="eager"
+          loading={i > 2 ? "eager" : "lazy"}
           width={size}
           height={size}
         />

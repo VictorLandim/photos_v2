@@ -29,10 +29,12 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
       <div className="relative h-[150px] w-full overflow-hidden rounded-none lg:h-[250px]">
         <Image
           unoptimized
-          alt="hero image"
+          priority
+          alt="Featured image"
           className="absolute inset-0 object-cover object-[center_62%]"
-          src={heroImg.src}
-          blurDataURL={heroImg.blurDataURL}
+          src={heroImg}
+          placeholder="blur"
+          sizes="100vw"
           fill
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
@@ -119,7 +121,8 @@ const getProps = async () => {
   const albumPromiseList = albumNames.map(async (m) => {
     const metadata = albumMetadata.find((x) => x.name === m);
 
-    const [public_id, format] = metadata.featuredImagePath.split(".");
+    const src = `victorphotos/${metadata.name}/${metadata.featuredImagePath}`;
+    const [public_id, format] = src.split(".");
 
     const featuredImageBlurUrl = await getBase64ImageUrl({
       public_id,
