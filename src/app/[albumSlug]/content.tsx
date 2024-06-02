@@ -175,7 +175,7 @@ export const Content = ({
       <div ref={ref}>{renderHeader()}</div>
 
       {renderStickyNav()}
-      <div className="p-2">
+      <div className="p-1">
         <Gallery photos={images} />
       </div>
     </div>
