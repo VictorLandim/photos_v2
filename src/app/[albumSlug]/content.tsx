@@ -55,7 +55,7 @@ export const Content = ({
     return (
       <div
         className={cn(
-          "relative top-0 z-50 flex items-center justify-between gap-2 overflow-hidden px-4 transition-all duration-200",
+          "relative top-0 z-50 flex items-center justify-between gap-2 overflow-hidden px-4",
           {
             "sticky bg-black/95": !isIntersecting,
           }
@@ -132,22 +132,23 @@ export const Content = ({
 
   const renderHeader = () => {
     return (
-      <header className="relative py-28 lg:py-32">
+      <header className="relative h-[500px] lg:h-[450px]">
         <AlbumHeading />
 
-        <Image
-          alt={meta.altName}
-          className="absolute inset-0 h-full w-full object-cover"
-          title={meta.altName}
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          src={src}
-          loading="eager"
-          width={size}
-          height={size}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/75"></div>
-
+        <div className="fixed h-[500px] w-full lg:h-[450px]">
+          <Image
+            alt={meta.altName}
+            className="absolute inset-0 h-full w-full object-cover"
+            title={meta.altName}
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            src={src}
+            loading="eager"
+            width={size}
+            height={size}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/75"></div>
+        </div>
         <div className="relative flex h-full w-full flex-col justify-center">
           <div className="mx-auto max-w-xs text-center lg:mx-0 lg:max-w-full">
             <p className="mb-3 text-base text-gray-200">{`${meta.month} ${meta.year} • ${images.length} photos`}</p>
@@ -175,7 +176,7 @@ export const Content = ({
       <div ref={ref}>{renderHeader()}</div>
 
       {renderStickyNav()}
-      <div className="p-0.5">
+      <div className="relative bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 p-0.5 pb-0 dark:from-black dark:via-neutral-900 dark:to-black">
         <Gallery photos={images} />
       </div>
     </div>
