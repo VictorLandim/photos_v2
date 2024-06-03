@@ -34,7 +34,7 @@ const renderPhoto = (renderPhotoProps: RenderPhotoProps<GalleryImageProps>) => {
           ref={ref as any}
           alt="victor.photos image"
           className={cn(
-            "cursor-pointer object-cover transition will-change-auto",
+            "cursor-pointer object-cover transition will-change-auto hover:lg:brightness-[1.15]",
             className
           )}
           style={{ transform: "translate3d(0, 0, 0)" }}
