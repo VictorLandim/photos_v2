@@ -1,7 +1,8 @@
-import { DivIcon, latLng, LatLngBounds } from "leaflet";
+import { DivIcon, LatLngBounds } from "leaflet";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { Item } from "./AlbumGrid";
 
+import { useEffect, useState } from "react";
 import cloudinaryLoader from "../utils/cloudinaryLoader";
 
 const MAX_BOUNDS = new LatLngBounds([
@@ -11,8 +12,16 @@ const MAX_BOUNDS = new LatLngBounds([
 const MAP_CENTER = [15, -20] as any;
 
 export const AlbumsMap = ({ albumList }: { albumList: Item[] }) => {
-  let url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  url = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{@2x}.png";
+  const [url, setUrl] = useState(
+    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{@2x}.png"
+  );
+
+  useEffect(() => {
+    // let url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+    if (document.querySelector("html")?.classList.contains("dark")) {
+      setUrl("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{@2x}.png");
+    }
+  }, []);
 
   const icons = albumList
     .filter((album) => !!album.pos)

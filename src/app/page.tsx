@@ -1,7 +1,6 @@
 import { AlbumGrid, Item } from "@/components/AlbumGrid";
 import { Container } from "@/components/Container";
 import { ShareButton } from "@/components/ShareButton";
-import { SunnyShotLink } from "@/components/SunnyShotLink";
 import albumMetadata, { FEATURED_ALBUM } from "@/utils/albumMetadata";
 import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import getAlbumNames from "@/utils/getAlbumNames";
@@ -24,75 +23,78 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
     albumList.map((item) => item.country).filter(Boolean)
   ).size;
 
-  return (
-    <div className="relative">
-      <div className="relative h-[150px] w-full overflow-hidden rounded-none lg:h-[250px]">
-        <Image
-          unoptimized
-          priority
-          alt="Featured image"
-          className="absolute inset-0 object-cover object-[center_62%]"
-          src={heroImg}
-          placeholder="blur"
-          sizes="100vw"
-          fill
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/5"></div>
-        <div className="p-5">
-          <SunnyShotLink white />
+  const renderInfo = () => {
+    return (
+      <div className="flex flex-col items-start gap-4">
+        <p className="mt-1 flex items-center gap-1 text-sm text-gray-300 lg:text-lg">
+          <MapPinIcon className="size-4" />
+          Cluj-Napoca
+        </p>
+        <div className="mt-6 flex items-center gap-6 lg:mt-6 lg:gap-5">
+          {[
+            [albums, "albums"],
+            [photos, "photos"],
+            [countries, "countries"],
+          ].map((item) => {
+            return (
+              <div className="flex flex-col gap-1 text-center">
+                <span className="text-xs font-bold text-gray-100 lg:text-base">
+                  {item[0]}
+                </span>
+                <span className="text-xs font-medium uppercase text-gray-300 lg:text-sm">
+                  {item[1]}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
-      <Container className="relative -mt-4 flex items-center justify-between lg:-mt-8">
-        <div className="relative flex gap-6 text-white lg:gap-8">
-          <div className="relative shrink-0">
+    );
+  };
+
+  return (
+    <div className="relative w-full overflow-hidden rounded-none py-8 pt-24 lg:py-12 lg:pt-24">
+      <Image
+        unoptimized
+        priority
+        alt="Featured image"
+        className="absolute inset-0 object-cover object-[center_60%]"
+        src={heroImg}
+        placeholder="blur"
+        sizes="100vw"
+        fill
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/55 dark:from-black/85 dark:to-black/40"></div>
+
+      <Container className="flex items-center justify-between">
+        <div className="relative flex w-full gap-6 text-white lg:gap-8">
+          <div className="relative size-[96px] shrink-0 lg:size-[150px]">
             <Image
               unoptimized
               alt="avatar"
               placeholder="blur"
-              width={96}
-              height={96}
-              className="size-24 rounded-full outline outline-4 outline-white lg:size-40 lg:outline-[6px] dark:outline-black"
+              className="rounded-full shadow-2xl outline outline-0 outline-white dark:outline-black"
               src={profile}
+              fill
             />
-            <div className="absolute bottom-[35px] left-1/2 flex -translate-x-1/2 scale-75 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-3 py-1 text-sm font-medium uppercase shadow-lg lg:bottom-[30px] lg:scale-100">
+            <div className="shadow-lglg:py-1 absolute -bottom-[10px] left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-2 py-0.5 text-[10px] font-medium uppercase lg:px-3 lg:py-1 lg:text-xs">
               <SunIcon className="size-4" />
 
               <span>pioneer</span>
             </div>
           </div>
-          <div className="mt-8 flex flex-col lg:mt-14">
+          <div className="flex flex-1 flex-col">
             <div className="flex items-end">
-              <div className="flex items-center gap-2 lg:mb-1">
-                <h5 className="text-2xl font-bold text-gray-950 lg:text-4xl dark:text-white">
+              <div className="flex items-center gap-2 lg:mt-4">
+                <h5 className="text-2xl font-bold text-gray-50 lg:text-4xl">
                   Victor Lan
                 </h5>
-                <pre className="hidden text-base font-bold text-gray-800 lg:block lg:text-2xl dark:text-gray-400">
-                  • @victor
-                </pre>
+                {/* <pre className="hidden text-base font-bold text-gray-800 lg:block lg:text-2xl dark:text-gray-400">
+                    • @victor
+                  </pre> */}
               </div>
             </div>
-            <p className="mt-1 flex items-center gap-1 text-sm text-gray-500 lg:text-lg dark:text-gray-400">
-              <MapPinIcon className="size-4" />
-              Cluj-Napoca
-            </p>
-            <div className="mt-6 flex items-center gap-4 lg:mt-6 lg:gap-5">
-              {[
-                [albums, "albums"],
-                [photos, "photos"],
-                [countries, "countries"],
-              ].map((item) => {
-                return (
-                  <div className="flex flex-col gap-1 text-center">
-                    <span className="text-xs font-bold text-gray-900 lg:text-base dark:text-gray-50">
-                      {item[0]}
-                    </span>
-                    <span className="text-xs font-medium uppercase text-gray-500 lg:text-sm">
-                      {item[1]}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+            {renderInfo()}
           </div>
         </div>
         <div className="mt-8 flex gap-3 self-start lg:mt-14 lg:gap-4">
@@ -109,9 +111,6 @@ const Albums = async () => {
   return (
     <div>
       <Hero albumList={albumList} />
-      <Container className="mt-8">
-        <div className="h-[0.5px] bg-gray-300 dark:bg-neutral-800" />
-      </Container>
       <AlbumGrid albumList={albumList} />
     </div>
   );

@@ -1,7 +1,10 @@
+import { Container } from "@/components/Container";
 import { SunnyShotBanner } from "@/components/SunnyShotBanner";
+import { SunnyShotLink } from "@/components/SunnyShotLink";
 import { GridLayoutProvider } from "@/contexts/GridLayoutContext";
 import { Poppins } from "next/font/google";
 import { headers } from "next/headers";
+import Link from "next/link";
 import Script from "next/script";
 import { userAgent } from "next/server";
 
@@ -32,7 +35,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       />
       <body>
         <GridLayoutProvider isMobile={isMobile}>
-          <div className="flex min-h-screen flex-col bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 dark:from-black dark:via-neutral-900 dark:to-black">
+          <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 dark:from-black dark:via-neutral-900 dark:to-black">
+            <div className="absolute left-0 top-0 z-10 flex h-14 w-full items-center bg-black/15 text-sm text-gray-50 backdrop-blur-md">
+              <Container className="flex items-center justify-between">
+                <SunnyShotLink white />
+                <Link href="/login">Log in</Link>
+              </Container>
+            </div>
             <main className="min-h-full">{children}</main>
             <SunnyShotBanner />
           </div>
