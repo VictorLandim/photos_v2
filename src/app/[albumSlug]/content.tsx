@@ -68,7 +68,7 @@ export const Content = ({
         <Container className="relative flex h-full items-center justify-between gap-2">
           <Link
             href="/"
-            className="flex items-center justify-center gap-2 text-gray-100"
+            className="flex items-center justify-center text-gray-100"
           >
             <Image
               unoptimized
@@ -81,7 +81,7 @@ export const Content = ({
             />
             <div
               className={cn(
-                "absolute left-[70px] top-1/2 text-nowrap text-lg font-semibold transition-all duration-300",
+                "absolute left-[55px] top-1/2 text-nowrap text-lg font-semibold transition-all duration-300 lg:left-[75px]",
                 {
                   "translate-y-full opacity-0": !isIntersecting,
                   "-translate-y-1/2 opacity-100": isIntersecting,
@@ -92,7 +92,7 @@ export const Content = ({
             </div>
             <div
               className={cn(
-                "absolute left-[70px] top-1/2 flex flex-col items-start gap-1 transition-all duration-300",
+                "absolute left-[55px] top-1/2 flex flex-col items-start gap-1 transition-all duration-300 lg:left-[75px]",
                 {
                   "-translate-y-full opacity-0": isIntersecting,
                   "-translate-y-1/2 opacity-100": !isIntersecting,
