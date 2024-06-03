@@ -15,20 +15,12 @@ const Gallery = ({ photos }: GalleryProps) => {
   const targetRowHeight = gridLayout === "multiple" ? 150 : 400;
 
   return (
-    <PhotoswipeGallery
-      id="photos"
-      options={
-        {
-          // showHideAnimationType: "none",
-          // zoomAnimationDuration: false,
-        }
-      }
-    >
+    <PhotoswipeGallery id="photos">
       <PhotoAlbum
         layout="rows"
         photos={photos}
         renderPhoto={renderPhoto}
-        spacing={4}
+        spacing={2}
         padding={0}
         targetRowHeight={targetRowHeight}
       />

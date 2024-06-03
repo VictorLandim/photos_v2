@@ -3,6 +3,7 @@ import type { RenderPhotoProps } from "react-photo-album";
 import { Item } from "react-photoswipe-gallery";
 import { GalleryImageProps } from "./types";
 import { getImageUrl } from "./getImageUrl";
+import { cn } from "./cn";
 
 const renderPhoto = (renderPhotoProps: RenderPhotoProps<GalleryImageProps>) => {
   const {
@@ -32,7 +33,10 @@ const renderPhoto = (renderPhotoProps: RenderPhotoProps<GalleryImageProps>) => {
         <Image
           ref={ref as any}
           alt="victor.photos image"
-          className={`${className} cursor-pointer rounded-sm object-cover transition will-change-auto`}
+          className={cn(
+            "cursor-pointer object-cover transition will-change-auto",
+            className
+          )}
           style={{ transform: "translate3d(0, 0, 0)" }}
           placeholder="blur"
           blurDataURL={blurDataUrl}

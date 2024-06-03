@@ -3,20 +3,28 @@ import { createContext, ReactNode, useContext, useState } from "react";
 
 type GridLayout = "single" | "multiple";
 
-const DEFAULT_GRID_LAYOUT: GridLayout = "single";
-
 type GridLayoutContext = {
   gridLayout: GridLayout;
   setLayout: (layout: GridLayout) => void;
+  isMobile: boolean;
 };
 
 const GridLayoutContext = createContext<GridLayoutContext>({
-  gridLayout: DEFAULT_GRID_LAYOUT,
+  gridLayout: "multiple",
   setLayout: () => {},
+  isMobile: false,
 });
 
-export const GridLayoutProvider = ({ children }: { children: ReactNode }) => {
-  const [gridLayout, setGridLayout] = useState<GridLayout>(DEFAULT_GRID_LAYOUT);
+export const GridLayoutProvider = ({
+  children,
+  isMobile,
+}: {
+  children: ReactNode;
+  isMobile?: boolean;
+}) => {
+  const [gridLayout, setGridLayout] = useState<GridLayout>(
+    isMobile ? "multiple" : "single"
+  );
   return (
     <GridLayoutContext.Provider
       value={{
@@ -24,6 +32,7 @@ export const GridLayoutProvider = ({ children }: { children: ReactNode }) => {
         setLayout: (layout: GridLayout) => {
           setGridLayout(layout);
         },
+        isMobile,
       }}
     >
       {children}
