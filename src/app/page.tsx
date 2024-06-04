@@ -64,7 +64,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
         sizes="100vw"
         fill
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/55 dark:from-black/85 dark:to-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-black/50 dark:from-black/85 dark:to-black/40"></div>
 
       <Container className="flex items-center justify-between">
         <div className="relative flex w-full gap-6 text-white lg:gap-8">
