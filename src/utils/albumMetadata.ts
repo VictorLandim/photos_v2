@@ -138,7 +138,7 @@ const NEA_KAMENI: AlbumMetadataItem = {
 const ANCIENT_THERA: AlbumMetadataItem = {
   name: "ancient-thera",
   country: "🇬🇷 Greece",
-  altName: "🏛️ Hike in Ancient Thera",
+  altName: "🏛️ Ancient Thera Hike",
   month: "June",
   year: "2023",
   isFilm: false,
@@ -212,7 +212,7 @@ const FUNGI: AlbumMetadataItem = {
 const BUENOS_AIRES: AlbumMetadataItem = {
   name: "buenos-aires",
   country: "🇦🇷 Argentina",
-  altName: "🎞️ Buenos Aires in BW",
+  altName: "🎞️ Buenos Aires Streets",
   month: "August",
   year: "2022",
   isFilm: false,
