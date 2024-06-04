@@ -137,10 +137,10 @@ export const Content = ({
 
   const renderHeader = () => {
     return (
-      <header className="relative h-[540px] lg:h-[450px]">
+      <header className="relative h-[500px] lg:h-[450px]">
         <AlbumHeading />
 
-        <div className="fixed h-[540px] w-full lg:h-[450px]">
+        <div className="fixed h-[500px] w-full lg:h-[450px]">
           <Image
             alt={meta.altName}
             className="absolute inset-0 h-full w-full object-cover"
@@ -164,10 +164,10 @@ export const Content = ({
               </p>
             )}
 
-            <h1 className="mb-4 text-5xl font-bold leading-tight text-white lg:text-7xl">
+            <h1 className="mb-4 text-4xl font-bold leading-tight text-white lg:text-6xl">
               {meta.altName}
             </h1>
-            <p className="mx-auto max-w-md text-lg text-gray-100">
+            <p className="mx-auto max-w-md text-base text-gray-100 lg:text-lg">
               {meta.description}
             </p>
             <div className="mt-4 flex items-center justify-center">
@@ -184,8 +184,9 @@ export const Content = ({
       <div ref={ref}>{renderHeader()}</div>
 
       {renderStickyNav()}
+
       <div className="relative bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 py-1 pb-0 dark:from-black dark:via-neutral-900 dark:to-black">
-        <Container>
+        <Container className="px-1 lg:px-4">
           <Gallery photos={images} />
         </Container>
       </div>

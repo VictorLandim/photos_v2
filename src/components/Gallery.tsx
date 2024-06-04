@@ -12,7 +12,7 @@ type GalleryProps = {
 const Gallery = ({ photos }: GalleryProps) => {
   const { gridLayout } = useGridLayout();
 
-  const targetRowHeight = gridLayout === "multiple" ? 150 : 400;
+  const targetRowHeight = gridLayout === "multiple" ? 150 : 500;
 
   return (
     <PhotoswipeGallery id="photos">
