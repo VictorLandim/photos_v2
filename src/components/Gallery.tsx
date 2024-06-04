@@ -20,7 +20,7 @@ const Gallery = ({ photos }: GalleryProps) => {
         layout="rows"
         photos={photos}
         renderPhoto={renderPhoto}
-        spacing={2}
+        spacing={4}
         padding={0}
         targetRowHeight={targetRowHeight}
       />
