@@ -48,18 +48,20 @@ const renderPhoto = ({ photo }, i) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-black/20 to-[70%] transition-all duration-300 hover:opacity-90"></div>
 
-        <div className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-lg bg-black/20 text-gray-100 backdrop-blur-sm transition-all lg:opacity-0 lg:group-hover:opacity-100">
-          <ArrowUturnRightIcon className="size-8" />
-        </div>
-
-        <div className="absolute left-4 top-4 flex gap-2">
-          {photo.country && (
+        <div className="absolute left-0 top-4 flex w-full gap-2 px-4">
+          <div className="flex flex-wrap items-center gap-2">
+            {photo.country && (
+              <div className="flex items-center justify-center rounded-full border border-current bg-black/25 px-3 py-1 text-base font-semibold text-white backdrop-blur-sm">
+                {photo.country}
+              </div>
+            )}
             <div className="flex items-center justify-center rounded-full border border-current bg-black/25 px-3 py-1 text-base font-semibold text-white backdrop-blur-sm">
-              {photo.country}
+              {`${photo.count} photos`}
             </div>
-          )}
-          <div className="flex items-center justify-center rounded-full border border-current bg-black/25 px-3 py-1 text-base font-semibold text-white backdrop-blur-sm">
-            {`${photo.count} photos`}
+          </div>
+
+          <div className="ml-auto flex size-8 items-center justify-center rounded-lg bg-black/20 text-gray-100 backdrop-blur-sm transition-all lg:size-10 lg:opacity-0 lg:group-hover:opacity-100">
+            <ArrowUturnRightIcon className="size-6 lg:size-8" />
           </div>
         </div>
         <div className="absolute bottom-6 left-4 flex w-full max-w-full flex-col text-white lg:left-8">
