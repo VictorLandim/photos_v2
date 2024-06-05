@@ -91,7 +91,7 @@ export const AlbumGrid = (props: AlbumGridProps) => {
 
   return (
     <Container>
-      <ul className="mb-8 pt-6" ref={containerRef}>
+      <ul className="mb-8" ref={containerRef}>
         <TabGroup defaultIndex={0} onChange={onTabChange}>
           <TabList className="mb-6 flex gap-2">
             {["Gallery", "Map"].map((item) => (
