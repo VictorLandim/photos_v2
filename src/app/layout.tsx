@@ -36,7 +36,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <GridLayoutProvider isMobile={isMobile}>
           <div className="relative flex min-h-screen flex-col bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 dark:from-black dark:via-neutral-900 dark:to-black">
-            <div className="absolute left-0 top-0 z-10 flex h-14 w-full items-center bg-black/15 text-sm text-gray-50 backdrop-blur-md">
+            <div className="absolute left-0 top-0 z-10 flex h-10 w-full items-center bg-black/15 text-sm text-gray-50 backdrop-blur-md lg:h-12">
               <Container className="flex items-center justify-between">
                 <SunnyShotLink white />
                 <Link href="/login">Log in</Link>

@@ -5,7 +5,7 @@ import { Container } from "./Container";
 
 const AlbumHeading = () => {
   return (
-    <div className="absolute right-0 top-14 z-50 flex h-[60px] w-full items-center justify-between bg-transparent lg:h-[70px]">
+    <div className="absolute right-0 top-10 z-50 flex h-[60px] w-full items-center justify-between bg-transparent lg:top-12 lg:h-[70px]">
       <Container className="flex items-center justify-between">
         <Link
           href="/"
