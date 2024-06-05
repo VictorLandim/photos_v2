@@ -186,7 +186,7 @@ export const Content = ({
       {renderStickyNav()}
 
       <div className="relative bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 py-1 pb-0 dark:from-black dark:via-neutral-900 dark:to-black">
-        <Container className="px-1 lg:px-4">
+        <Container className="px-1 lg:px-1">
           <Gallery photos={images} />
         </Container>
       </div>

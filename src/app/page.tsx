@@ -36,7 +36,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
           sizes="100vw"
           fill
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-black/50 dark:from-black/50 dark:to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/40 dark:from-black/50 dark:to-black/40"></div>
       </div>
 
       <Container className="relative flex items-center justify-between">
@@ -46,7 +46,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
               unoptimized
               alt="avatar"
               placeholder="blur"
-              className="rounded-full shadow-2xl outline outline-4 outline-white lg:outline-4 dark:outline-black"
+              className="rounded-full shadow-sm outline outline-4 outline-white lg:outline-4 dark:outline-black"
               src={profile}
               fill
             />
@@ -57,10 +57,10 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col pt-4">
+          <div className="flex flex-1 flex-col pt-6">
             <div className="flex">
               <div className="flex items-center gap-2">
-                <h5 className="text-2xl font-bold text-gray-50 lg:text-4xl">
+                <h5 className="text-2xl font-bold text-gray-950 lg:text-4xl dark:text-gray-50">
                   Victor Lan
                 </h5>
                 {/* <pre className="hidden text-base font-bold text-gray-800 lg:block lg:text-2xl dark:text-gray-400">
@@ -69,7 +69,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
               </div>
             </div>
             <div className="flex flex-col items-start gap-0 lg:gap-4">
-              <p className="mt-1 flex items-center gap-1 text-sm text-gray-300 lg:text-lg">
+              <p className="mt-1 flex items-center gap-1 text-sm text-gray-600 lg:text-lg dark:text-gray-300">
                 <MapPinIcon className="size-4" />
                 Cluj-Napoca
               </p>
@@ -81,10 +81,10 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
                 ].map((item) => {
                   return (
                     <div className="flex flex-col gap-1 text-center">
-                      <span className="text-xs font-bold text-gray-100 lg:text-base">
+                      <span className="text-xs font-bold text-gray-800 lg:text-base dark:text-gray-100">
                         {item[0]}
                       </span>
-                      <span className="text-xs font-medium uppercase text-gray-300 lg:text-sm">
+                      <span className="text-xs font-medium uppercase text-gray-700 lg:text-sm dark:text-gray-300">
                         {item[1]}
                       </span>
                     </div>
@@ -94,7 +94,7 @@ const Hero = ({ albumList }: { albumList: Item[] }) => {
             </div>
           </div>
         </div>
-        <button className="absolute right-4 top-4 flex size-8 appearance-none items-center justify-center self-start rounded-full border border-current bg-black/10 text-gray-200 transition-all hover:bg-black/20 lg:right-8">
+        <button className="absolute right-4 top-6 flex size-8 appearance-none items-center justify-center self-start rounded-full border border-current text-gray-500 transition-all hover:bg-black/5 lg:right-8 dark:bg-black/10 dark:text-gray-200 dark:hover:bg-black/20">
           <ArrowUpOnSquareIcon className="size-5" />
         </button>
       </Container>
